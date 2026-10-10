@@ -79,7 +79,7 @@ For local frontend development against your AWS backend, copy `frontend/.env.exa
 | API load error | In local simulation, start both services with `npm run dev`; on AWS, check the API output, region and exact CORS origin. |
 | Port already in use | Stop the earlier Kahaan process using its terminal. Use port 5173: the development proxy and CORS expect it. |
 | Blank map but the list works | Check internet access and tile loading. Tiles are external and their availability is separate from the app API. |
-| No bins/recycling destinations | The initial online research found none in this boundary. Empty results are intentional; contribute sourced locations instead of inventing records. |
+| No suitable recycling destination | The recycling listing is a call-first service office, not an evidenced walk-in drop-off. The mapped litter bin accepts only selected small dry litter; the other waste point is browse-only. Empty recommendations are intentional when acceptance is unknown. |
 | Location unavailable | Browse using labelled distances from the area centre; adding still supports a map pin. AWS geolocation requires HTTPS and user permission. |
 | Account or vote rejected | Check email verification, session, creator ownership and one-vote-per-account rule. Community confirmation needs two other accounts. |
 | Source data edits do not appear | Run `node scripts/sync-data.mjs`; rebuild. Local persisted state also retains earlier records until deliberately reset. Existing cloud seed records are not overwritten. |

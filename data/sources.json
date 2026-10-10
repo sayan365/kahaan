@@ -1,11 +1,56 @@
 {
-  "researchDate": "2026-10-10", "fieldChecks": false,
+  "researchDate": "2026-10-10",
+  "fieldChecks": false,
   "areaRationale": "One central Kolkata pilot window covering Esplanade, College Street and nearby mapped services. Not an administrative boundary or citywide directory.",
   "sources": [
-    {"id":"osm", "url":"https://www.openstreetmap.org/copyright", "method":"One-time bounded Nominatim amenity searches after Overpass failures; results retain individual OSM source URLs.", "limitations":"18 public/unknown-access toilet candidates; private/customer-only entries excluded. No bins or recycling points returned; this is not proof none exist. Unknown access and current condition remain uncertain. No field checks or community votes implied."},
-    {"id":"croma-programme", "url":"https://www.croma.com/lp-croma-e-waste", "evidence":"Operator states its stores function as e-waste collection centres.", "limitations":"Specific item acceptance and service availability should be checked before travel. Battery and mercury-bearing items are not routed to this record."},
-    {"id":"croma-location", "url":"https://store.croma.com/croma-park-street-electronics-retail-and-repair-shop-park-street-area-kolkata-263521/Home", "evidence":"Operator-published address: 31 Chowringhee Road, opposite Apeejay House. geo.position metadata: 22.55948473;88.3498563.", "limitations":"Published pin has not been checked in person."},
-    {"id":"kmc-ewaste", "url":"https://www.kmcgov.in/KMCPortal/jsp/EWaste.jsp", "evidence":"KMC lists Dhapa Garage, Tangra and a contact route for disposal.", "limitations":"Not seeded: exact drop-off pin and current public access were not established."},
-    {"id":"kmc-historical-toilets", "url":"https://www.kmcgov.in/KMCPortal/downloads/pay_toilets_05_11_2015.pdf", "sourceDate":"2015-11-05", "limitations":"Historical list only; not imported as current verified facilities."}
+    {
+      "id": "osm",
+      "url": "https://www.openstreetmap.org/copyright",
+      "method": "Initial bounded Nominatim snapshot; expanded by a successful full-area Overpass query for toilets, waste_basket, waste_disposal and recycling on 2026-10-10. Stable IDs retained; existing records preserved.",
+      "limitations": "26 public/unknown-access toilet records and two waste points. Private/customer-only records excluded. Separate mapped male/female facilities may share a building. Only the litter bin is suggested for small dry litter; public use and waste acceptance at the disposal container remain unknown. No field checks or community votes implied."
+    },
+    {
+      "id": "croma-programme",
+      "url": "https://www.croma.com/lp-croma-e-waste",
+      "evidence": "Operator states its stores function as e-waste collection centres.",
+      "limitations": "Specific item acceptance and service availability should be checked before travel. Battery and mercury-bearing items are not routed to this record."
+    },
+    {
+      "id": "croma-location",
+      "url": "https://store.croma.com/croma-park-street-electronics-retail-and-repair-shop-park-street-area-kolkata-263521/Home",
+      "evidence": "Operator-published address: 31 Chowringhee Road, opposite Apeejay House. geo.position metadata: 22.55948473;88.3498563.",
+      "limitations": "Published pin has not been checked in person."
+    },
+    {
+      "id": "kmc-ewaste",
+      "url": "https://www.kmcgov.in/KMCPortal/jsp/EWaste.jsp",
+      "evidence": "KMC lists Dhapa Garage, Tangra and a contact route for disposal.",
+      "limitations": "Imported as a call-first candidate. Garage map references place it inside the pilot, but the entrance, item acceptance and current availability remain unconfirmed. Excluded from automatic recommendations."
+    },
+    {
+      "id": "kmc-historical-toilets",
+      "url": "https://www.kmcgov.in/KMCPortal/downloads/pay_toilets_05_11_2015.pdf",
+      "sourceDate": "2015-11-05",
+      "limitations": "Historical list only; not imported as current verified facilities."
+    },
+    {
+      "id": "kmc-garage-location",
+      "url": "https://www.google.com/maps/place/Kmc+Dhapa+Garage/data=!4m7!3m6!1s0x3a0276834d61f61b:0x4925cde7204b9aca!8m2!3d22.552!4d88.3970874!16s%2Fg%2F11g6mdx8pp",
+      "evidence": "Manual comparison of the KMC-named garage with a map listing in Tangra: 22.552, 88.3970874.",
+      "limitations": "Garage-level approximate pin only; nearby duplicate map listing is not a second collection site."
+    },
+    {
+      "id": "vital-waste-service",
+      "url": "https://www.maulanaazadcollegekolkata.ac.in/pdf/AQAR/2023-24/6/6%2C5.1.pdf",
+      "sourceDate": "2024",
+      "evidence": "Institution-published client record documents paper, metal, plastic and e-waste recycling through Vital Waste.",
+      "limitations": "Evidence of a collection service, not public walk-in acceptance. The current map listing is an office at Fortuna Tower; older records use other addresses. Office candidate is browse-only."
+    },
+    {
+      "id": "vital-waste-location",
+      "url": "https://www.google.com/maps/place/Vital+Waste/data=!4m6!3m5!1s0x3a027726786f5b23:0xf9bcaa726f8fb901!8m2!3d22.5761976!4d88.3484968!16s%2Fg%2F11kytprvr7",
+      "evidence": "Current map listing identifies Vital Waste at Fortuna Tower, Netaji Subhas Road, with published service number 03366064288.",
+      "limitations": "Approximate office pin; no claim of recycling equipment or a public drop-off at this address."
+    }
   ]
 }

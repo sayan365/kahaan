@@ -20,7 +20,7 @@ The rules require a public repository, a YouTube demo under three minutes (publi
 
 Show a toilet lookup, then a charger search with sourced Croma coordinates, distance origin and directions. Switch Bengali/Hindi without losing the task. Show add/confirm/report behaviour and explain that two independent confirmations change status. Show Amplify, API Gateway, Lambda, DynamoDB and Cognito. If any contribution demonstration uses local simulated accounts, label it visibly as local; do not describe it as a completed live cloud test.
 
-Use a charger for the demonstrated destination, not a battery: specialist battery acceptance has not been established. State that the pilot has 18 online-sourced toilet candidates and one operator-sourced e-waste point, no field checks and no measured disposal impact. Empty bins/recycling results are honest coverage gaps.
+Use a charger for the demonstrated destination, not a battery: specialist battery acceptance has not been established. State that the expanded pilot has 31 online-sourced listings: 26 toilet records, two waste points, two e-waste listings and one recycling-service office. Three uncertain listings are browse-only, not automatic recommendations. There are no field checks or measured disposal outcomes; counts describe listings, not independently verified public facilities.
 
 ## Hosting during judging
 

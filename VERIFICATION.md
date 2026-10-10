@@ -25,3 +25,10 @@ All local browser identities were explicitly simulations. Test place named “De
 - The original `main` branch retains an older unconfigured build and pending manual-upload jobs after failed file transfers. Use the `demo` URL. Both branches belong to the same Amplify app and are removed together during shutdown.
 
 Demo cost preparation: API throttle lowered to 5 req/s, burst 10; stack-managed Lambda logs retain seven days. Pause/removal PowerShell script parses and both -WhatIf modes were exercised with stubbed read-only AWS responses; no AWS mutations occurred in those dry runs. Portable Lambda archive inspected: exactly the selected runtime files, no credentials or local state. Console seed tests cover zero initial votes, repeat-run preservation and infrastructure errors. These are local checks, not live shutdown or SAM validation.
+
+## Research expansion checks (10 October 2026)
+
+- The expanded source catalogue has 31 records. All 14 tests, TypeScript checks and the production build passed; portable runtime and source archives were regenerated.
+- The updated runtime ZIP was uploaded to the existing Lambda. Its seed invocation succeeded (1334.47 ms); the normal API handler was restored and visibly verified. Public GET then returned 31 records: 26 toilets, two bins/waste points, two e-waste listings and one recycling service office. All counters remained zero.
+- Live Chrome showed 31 places, two bin results and the recycling service-office candidate. Its detail displayed uncertainty, source link, zero votes and the report action. Plastic-bottle search suggested only the mapped litter bin; charger still suggested Croma; batteries had no suitable destination. Three browse-only candidates remained excluded from item recommendations.
+- No field checks or independent community confirmations were added. Some OSM toilet records share a building; the count is listings, not independent buildings. See data/RESEARCH.md for sources and exclusions.
