@@ -2,7 +2,7 @@
 
 Date: 2026-10-10. Environment: Windows, Node 24.14.0.
 
-- Final commands passed: `npm test` (12 tests), `npm run typecheck`, `npm run build`, strict premium UI audit and DESIGN.md lint (zero errors).
+- Final commands passed: `npm test` (14 tests), `npm run typecheck`, `npm run build`, strict premium UI audit and DESIGN.md lint (zero errors).
 - Core unit tests: status thresholds/ties, malformed inputs, boundary coordinates, haversine known distance/antipodes, safe recommendation exclusions and no creator identity in public output.
 - Service tests: authenticated create, creator rejection, independent confirmations, duplicate vote rejection, report status, missing-place errors.
 - DynamoDB mock checks: unique vote and counter increment share one transaction; creator guard remains on the update; conflict reasons map to 409; infrastructure failures propagate; queries read all pages.
@@ -12,6 +12,16 @@ Date: 2026-10-10. Environment: Windows, Node 24.14.0.
 - Browser recovery: unmatched item shows category choices; empty Bins filter offers Add; mobile map renders at 312px wide and 420px tall. Chrome captured no error logs in the checked workflow. Temporary viewport override was reset.
 - Strict premium static audit: zero findings. DESIGN.md lint: zero errors; some unused component-token warnings are documentation-only.
 
-All browser identities were explicitly local simulations. Test place named “Demo collection point — not a real facility” was removed after testing along with its votes, preserving other local data; no synthetic facility is part of shipped seed data. AWS SAM CLI and AWS CLI are absent locally. The signed-in browser was subsequently used to create a $1 notification-only budget and a private, empty deployment bucket. CloudShell is blocked by account verification; direct file upload is blocked by extension local-file access. The template and Cognito/DynamoDB cloud paths still require live deployment validation. No field checks, physical-device test or native-language review was performed.
+All local browser identities were explicitly simulations. Test place named “Demo collection point — not a real facility” was removed after testing along with its votes, preserving other local data; no synthetic facility is part of shipped seed data. No field checks, physical-device test or native-language review was performed.
+
+## Live AWS checks
+
+- CloudFormation successfully transformed the SAM template into 13 resources and created stack `kahaan` after the owner's IAM approval. Its later origin-only update affected the HTTP API without replacement and reached `UPDATE_COMPLETE`.
+- Internal seed invocation succeeded: inserted 19 of 19 locations, 810.50 ms execution. The runtime handler was restored to `src/handlers/api.handler` and verified in the console.
+- Public API GET returned HTTP 200 and 19 records, all with zero votes, with no creator identity exposed. Its allowed CORS origin matches `https://demo.dato5zt1h00lk.amplifyapp.com`. Unauthenticated POST returned 401.
+- The connected production build passed and Amplify's `demo` branch deployed. Chrome loaded 19 live places; charger search selected Croma's sourced Park Street coordinates; Bengali and Hindi switching preserved the query and displayed localized disposal guidance. No error logs appeared in the checked live flow.
+- Add opens the live sign-in/create-account flow. Account creation, email verification and authenticated create/vote acceptance are pending the owner's password entry; local simulation checks do not prove these cloud paths.
+- Budget notification email is verified. Credit exclusion remains pending billing data availability. CloudShell remains unavailable during account verification. Local AWS CLI/SAM CLI are absent, so no CLI SAM validation is claimed.
+- The original `main` branch retains an older unconfigured build and pending manual-upload jobs after failed file transfers. Use the `demo` URL. Both branches belong to the same Amplify app and are removed together during shutdown.
 
 Demo cost preparation: API throttle lowered to 5 req/s, burst 10; stack-managed Lambda logs retain seven days. Pause/removal PowerShell script parses and both -WhatIf modes were exercised with stubbed read-only AWS responses; no AWS mutations occurred in those dry runs. Portable Lambda archive inspected: exactly the selected runtime files, no credentials or local state. Console seed tests cover zero initial votes, repeat-run preservation and infrastructure errors. These are local checks, not live shutdown or SAM validation.

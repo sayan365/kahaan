@@ -4,9 +4,9 @@
 
 Browser access is available and the AWS console is signed in. Account-specific credit balances and identifiers belong in ignored `.demo-artifacts/deployment-status.txt`, never in the public repository. Check the account's current plan, credit balance and expiry in Billing before deploying. A free plan and a paid plan have different charging behaviour.
 
-CloudShell in Mumbai refused to create an environment: account verification is in progress and may take up to two days. Direct console resource creation works: a private S3 artifact bucket was created successfully. The next upload is blocked because the Chrome ChatGPT extension has local-file access disabled. No backend deployment or live Cognito/DynamoDB test has completed. A local build is available; record it as a local demonstration until AWS deployment is verified.
+The backend stack was deployed through the AWS console after the owner approved its IAM role. The internal seed loader inserted all 19 sourced locations, and the normal API handler was restored. Public GET returns 19 records with zero votes and no creator identity; unauthenticated POST returns 401. Amplify's connected frontend is deployed on the `demo` branch. Failed uploads left pending jobs on `main`; that branch's older build has no backend configuration. Use the demo URL below. CloudShell remains blocked by account verification. Live account creation and authenticated contributions still need acceptance testing.
 
-Created **Kahaan demo - cost alert**, monthly $1, all services, actual cost over 100%, one email recipient supplied by the owner. The recipient must click AWS's verification email before receiving alerts. Billing data is initially unavailable and may take 24 hours to populate. The console could not load charge-type options, so **credits have not been explicitly excluded from this budget yet**; it is not a reliable credit-consumption alarm until updated. Once data is ready: edit budget > filter specific cost dimensions > Charge type > Excludes > Credit and Refund > apply > save. Check the saved filter and email verification status.
+Created **Kahaan demo - cost alert**, monthly $1, all services, actual cost over 100%, one email recipient supplied by the owner. AWS shows the recipient as **Verified**. Billing data is initially unavailable and may take 24 hours to populate. The console could not load charge-type options, so **credits have not been explicitly excluded from this budget yet**; it is not a reliable credit-consumption alarm until updated. Once data is ready: edit budget > filter specific cost dimensions > Charge type > Excludes > Credit and Refund > apply > save. Check the saved filter.
 
 Budgets notify after billing processing; they do not enforce a $1 cap or automatically shut services down. Check **Billing > Credits/Free Tier**, **Bills**, and **Budgets** before and after the demo. The all-services alert covers other account projects too.
 
@@ -23,12 +23,13 @@ Outside applicable free allowances, Amplify lists $0.15/GB served and $0.023/GB-
 | Resource | Value/status |
 |---|---|
 | Region | ap-south-1 |
-| CloudFormation stack | kahaan (not deployed yet) |
-| Amplify app | kahaan-demo (not deployed yet) |
-| Amplify app ID/public URL | pending |
-| API/function/table/pool IDs | pending |
-| Artifact bucket and prefix | dedicated private, empty bucket recorded locally; SAM-managed deploys use prefix kahaan-demo/ |
-| Budget | Kahaan demo - cost alert (created; email verification initially pending) |
+| CloudFormation stack | kahaan; UPDATE_COMPLETE after demo-origin-only update |
+| Amplify app | kahaan-demo; connected demo branch deployed; main has an older unconfigured build and pending upload jobs |
+| Amplify app ID/public URL | dato5zt1h00lk / https://demo.dato5zt1h00lk.amplifyapp.com |
+| API | https://chzjyom2t3.execute-api.ap-south-1.amazonaws.com |
+| Function/table/pool IDs | exact CloudFormation outputs recorded in ignored .demo-artifacts/deployment-status.txt |
+| Artifact bucket and prefix | dedicated private bucket recorded locally; two console deployment files at root; SAM-managed deploys use prefix kahaan-demo/ |
+| Budget | Kahaan demo - cost alert (created; email verified; credit exclusion pending) |
 
 Prepare a credential-free backend archive with `powershell -File scripts/package-demo.ps1`. The output is `.demo-artifacts/kahaan-backend-source.zip`. Inspect its allowlisted contents before upload. In CloudShell once available, unpack into a new project directory, run `npm ci --ignore-scripts`, `sam validate --lint`, `sam build`, and the deployment commands in README. Never upload `.env`, `.aws`, local votes, Git metadata or node_modules.
 
@@ -59,6 +60,10 @@ Wait until judges have accessed the required URL, unless the submission accepts 
 .\scripts\shutdown-demo.ps1 -Mode RemoveDemo -AmplifyAppId <actual-id> -WhatIf
 .\scripts\shutdown-demo.ps1 -Mode RemoveDemo -AmplifyAppId <actual-id>
 ```
+
+For this deployment, replace `<actual-id>` with `dato5zt1h00lk`. Deleting the Amplify app removes both `main` and `demo` branches.
+
+Without AWS CLI, use the signed-in console in Mumbai: Lambda > `kahaan-ApiFunction-KqEWQsIhX5oN` > Throttle for a reversible backend pause. For full removal after recording/judging, Amplify > `kahaan-demo` > App settings > General settings > Delete app, then CloudFormation > `kahaan` > Delete stack. Export needed data first and verify deletion completes. Finally inspect the dedicated artifact bucket recorded locally, delete its two project files, and delete the empty bucket. A backend pause alone leaves hosting and storage costs possible.
 
 The script verifies the exact stack description and Amplify app name, prints the account, asks for confirmation, deletes the hosting app and backend stack, and waits for stack deletion. It stops on errors. No shutdown was executed during preparation. These scripts have not yet been tested against deployed AWS resources.
 
