@@ -2,11 +2,17 @@
 
 Find a toilet, a bin or the right place for old electronics in Kolkata. English is the default; Bengali and Hindi are supported across browsing, search, forms and feedback. Anyone can browse. Accounts are required to add, confirm or report a place.
 
+Try the [temporary AWS demo](https://demo.dato5zt1h00lk.amplifyapp.com), or run the application locally using the commands below. The hosted demo may be retired after judging; local development uses the committed source data and does not depend on that deployment or an AWS account. Internet access is needed for map tiles and external directions.
+
+[Setup and troubleshooting](docs/SETUP.md) · [Contributing](CONTRIBUTING.md) · [Verification evidence](VERIFICATION.md) · [Costs and shutdown](AWS-DEMO.md) · [Submission checklist](SUBMISSION.md)
+
 ## Run locally
 
 Requires Node.js 22.16+ (Node 24 was used for this build).
 
 ```powershell
+git clone https://github.com/sayan365/kahaan.git
+cd kahaan
 npm ci
 npm test
 npm run build
@@ -72,7 +78,7 @@ npm run seed
 6. Redeploy Amplify after setting the variables. For local testing against AWS, copy `frontend/.env.example` to `frontend/.env`, fill the same public identifiers, and restart Vite. Missing production configuration shows a setup error; production never switches to demo authentication.
 7. Verify the live `/places`, Cognito email verification, unauthorized write rejection, creator/duplicate-vote rejection, independent confirmation, CORS and mobile HTTPS behaviour. Create three real demo accounts ahead of recording. Do not label the local simulation as an AWS deployment.
 
-The API Gateway JWT authorizer validates Cognito issuer/audience. The client sends the ID token; this configuration does not require OAuth scopes. Live token acceptance still needs deployment testing. Only GET /places is public. API Gateway limits requests to a 5 req/s rate and 10 burst for the short demo. DynamoDB tables use on-demand capacity and stack-managed Lambda logs expire after seven days. Costs depend on usage and account eligibility; throttling is not a spending cap. See [AWS-DEMO.md](AWS-DEMO.md) for the current account blocker, budget status, artifact packaging, pause and permanent shutdown instructions.
+The API Gateway JWT authorizer validates Cognito issuer/audience. The client sends the ID token; this configuration does not require OAuth scopes. Live token acceptance passed authenticated creation and creator-vote rejection; independent cloud voting still needs testing. Only GET /places is public. API Gateway limits requests to a 5 req/s rate and 10 burst for the short demo. DynamoDB tables use on-demand capacity and stack-managed Lambda logs expire after seven days. Costs depend on usage and account eligibility; throttling is not a spending cap. See [AWS-DEMO.md](AWS-DEMO.md) for the current account blocker, budget status, artifact packaging, pause and permanent shutdown instructions.
 
 ## Architecture
 
