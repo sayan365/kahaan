@@ -18,7 +18,7 @@ export function Icon({ type, size = 28 }: { type: PlaceType | 'pin' | 'search' |
     toilet: <><circle cx="9" cy="5" r="2"/><path d="M6 20v-6H4l3-6h4l3 6h-2v6M18 4v16"/></>,
     dustbin: <><path d="M5 7h14M9 4h6M7 7l1 13h8l1-13M10 10v7M14 10v7"/></>,
     ewaste: <><rect x="5" y="3" width="14" height="13" rx="2"/><path d="M9 20h6M12 16v4M13 6l-3 4h4l-3 4"/></>,
-    recycling: <><path d="M8 6l4-3 4 6M17 9l-1 5 5-1M20 13l-4 7H9M9 20l-3-4-2 4M4 16l1-6 3-5M5 10l5 1-2-5"/></>,
+    recycling: <><path d="m7 7 3.3-4.7a2 2 0 0 1 3.4 0L17 8m-5-1 5 1 1-5"/><path d="m19 12 2.5 4.5A2 2 0 0 1 19.8 19H13m3-3-3 3 3 3"/><path d="M9 19H4.2a2 2 0 0 1-1.7-3L6 10m-5 1 5-1 1 5"/></>,
     pin: <><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0114 0Z"/><circle cx="12" cy="10" r="2"/></>,
     search: <><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></>,
     arrow: <path d="M5 12h14m-6-6 6 6-6 6"/>
