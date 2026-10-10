@@ -1,0 +1,6 @@
+{
+  "id": "kolkata-central", "name": "Central Kolkata", "city": "Kolkata",
+  "center": {"lat": 22.565, "lng": 88.36}, "zoom": 14,
+  "bbox": {"south": 22.535, "west": 88.335, "north": 22.59, "east": 88.405},
+  "note": "A single central Kolkata pilot window, including Esplanade, College Street and Tangra. Coordinates define the pilot window, not an administrative boundary. Data researched online; no field checks."
+}

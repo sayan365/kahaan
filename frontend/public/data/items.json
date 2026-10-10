@@ -1,0 +1,939 @@
+[
+  {
+    "id": "phone-charger",
+    "name": "Phone charger / adapter",
+    "aliases": [
+      "charger",
+      "adapter",
+      "charging adapter",
+      "purana charger",
+      "Phone charger / adapter",
+      "charjar",
+      "charger kothay"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "Electronic waste. Don't put it in a normal bin; take it to an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "ফোন চার্জার / অ্যাডাপ্টার",
+        "aliases": [
+          "চার্জার"
+        ],
+        "tip": "সাধারণ পাত্রে ফেলবেন না। এই জিনিস গ্রহণ করে এমন ইলেকট্রনিক বর্জ্য সংগ্রহস্থলে জমা দিন। যাওয়ার আগে গ্রহণের নিয়ম যাচাই করুন।"
+      },
+      "hi": {
+        "name": "फ़ोन चार्जर / अडैप्टर",
+        "aliases": [
+          "चार्जर"
+        ],
+        "tip": "सामान्य कूड़ेदान में न डालें। यह सामान स्वीकार करने वाले इलेक्ट्रॉनिक कचरा संग्रह केंद्र पर जमा करें। जाने से पहले नियम जाँचें।"
+      }
+    }
+  },
+  {
+    "id": "usb-cable",
+    "name": "Charging / USB cable",
+    "aliases": [
+      "cable",
+      "wire",
+      "usb",
+      "data cable",
+      "Charging / USB cable"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "E-waste. Hand it in at an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "চার্জিং / USB তার",
+        "aliases": [
+          "তার"
+        ],
+        "tip": "সাধারণ পাত্রে ফেলবেন না। এই জিনিস গ্রহণ করে এমন ইলেকট্রনিক বর্জ্য সংগ্রহস্থলে জমা দিন। যাওয়ার আগে গ্রহণের নিয়ম যাচাই করুন।"
+      },
+      "hi": {
+        "name": "चार्जिंग / USB केबल",
+        "aliases": [
+          "केबल"
+        ],
+        "tip": "सामान्य कूड़ेदान में न डालें। यह सामान स्वीकार करने वाले इलेक्ट्रॉनिक कचरा संग्रह केंद्र पर जमा करें। जाने से पहले नियम जाँचें।"
+      }
+    }
+  },
+  {
+    "id": "old-phone",
+    "name": "Old mobile phone",
+    "aliases": [
+      "phone",
+      "mobile",
+      "smartphone",
+      "purana phone",
+      "Old mobile phone"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "Erase your data first, then hand it to an authorised e-waste collector.",
+    "translations": {
+      "bn": {
+        "name": "পুরনো মোবাইল ফোন",
+        "aliases": [
+          "পুরনো ফোন"
+        ],
+        "tip": "জমা দেওয়ার আগে ব্যক্তিগত তথ্য মুছুন। উপযুক্ত ইলেকট্রনিক বর্জ্য সংগ্রহস্থল ব্যবহার করুন।"
+      },
+      "hi": {
+        "name": "पुराना मोबाइल फ़ोन",
+        "aliases": [
+          "पुराना फ़ोन"
+        ],
+        "tip": "जमा करने से पहले निजी डेटा मिटाएँ। उपयुक्त इलेक्ट्रॉनिक कचरा संग्रह केंद्र इस्तेमाल करें।"
+      }
+    }
+  },
+  {
+    "id": "earphones",
+    "name": "Earphones / headphones",
+    "aliases": [
+      "earbuds",
+      "headset",
+      "earphone",
+      "Earphones"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "E-waste. Take it to an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "ইয়ারফোন / হেডফোন",
+        "aliases": [
+          "ইয়ারফোন"
+        ],
+        "tip": "সাধারণ পাত্রে ফেলবেন না। এই জিনিস গ্রহণ করে এমন ইলেকট্রনিক বর্জ্য সংগ্রহস্থলে জমা দিন। যাওয়ার আগে গ্রহণের নিয়ম যাচাই করুন।"
+      },
+      "hi": {
+        "name": "ईयरफ़ोन / हेडफ़ोन",
+        "aliases": [
+          "ईयरफ़ोन"
+        ],
+        "tip": "सामान्य कूड़ेदान में न डालें। यह सामान स्वीकार करने वाले इलेक्ट्रॉनिक कचरा संग्रह केंद्र पर जमा करें। जाने से पहले नियम जाँचें।"
+      }
+    }
+  },
+  {
+    "id": "laptop",
+    "name": "Laptop",
+    "aliases": [
+      "notebook computer",
+      "old laptop",
+      "Laptop"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "Wipe your data, then use an authorised e-waste collector.",
+    "translations": {
+      "bn": {
+        "name": "ল্যাপটপ",
+        "aliases": [
+          "ল্যাপটপ"
+        ],
+        "tip": "ব্যক্তিগত তথ্য মুছে উপযুক্ত ইলেকট্রনিক বর্জ্য সংগ্রহস্থলে জমা দিন।"
+      },
+      "hi": {
+        "name": "लैपटॉप",
+        "aliases": [
+          "लैपटॉप"
+        ],
+        "tip": "निजी डेटा मिटाकर उपयुक्त इलेक्ट्रॉनिक कचरा संग्रह केंद्र पर जमा करें।"
+      }
+    }
+  },
+  {
+    "id": "keyboard-mouse",
+    "name": "Keyboard / mouse",
+    "aliases": [
+      "mouse",
+      "keyboard",
+      "computer accessories",
+      "Keyboard / mouse"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "E-waste. Take it to an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "কিবোর্ড / মাউস",
+        "aliases": [
+          "কিবোর্ড"
+        ],
+        "tip": "সাধারণ পাত্রে ফেলবেন না। এই জিনিস গ্রহণ করে এমন ইলেকট্রনিক বর্জ্য সংগ্রহস্থলে জমা দিন। যাওয়ার আগে গ্রহণের নিয়ম যাচাই করুন।"
+      },
+      "hi": {
+        "name": "कीबोर्ड / माउस",
+        "aliases": [
+          "कीबोर्ड"
+        ],
+        "tip": "सामान्य कूड़ेदान में न डालें। यह सामान स्वीकार करने वाले इलेक्ट्रॉनिक कचरा संग्रह केंद्र पर जमा करें। जाने से पहले नियम जाँचें।"
+      }
+    }
+  },
+  {
+    "id": "power-bank",
+    "name": "Power bank",
+    "aliases": [
+      "powerbank",
+      "portable charger",
+      "Power bank"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "Contains a lithium battery. Don't crush or puncture it; hand it in at an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "পাওয়ার ব্যাংক",
+        "aliases": [
+          "পাওয়ার ব্যাংক"
+        ],
+        "tip": "লিথিয়াম ব্যাটারি আছে। চাপ দিয়ে ভাঙবেন না বা ফুটো করবেন না। গ্রহণ করে এমন সংগ্রহস্থল খুঁজুন।"
+      },
+      "hi": {
+        "name": "पावर बैंक",
+        "aliases": [
+          "पावर बैंक"
+        ],
+        "tip": "इसमें लिथियम बैटरी है। कुचलें या छेद न करें। इसे स्वीकार करने वाला संग्रह स्थल खोजें।"
+      }
+    }
+  },
+  {
+    "id": "aa-battery",
+    "name": "AA / AAA battery",
+    "aliases": [
+      "battery",
+      "batteries",
+      "cell",
+      "dry cell",
+      "purani battery",
+      "AA / AAA battery",
+      "batteri",
+      "battery kahan"
+    ],
+    "category": "ewaste",
+    "placeTypes": [],
+    "tip": "Never put in a normal bin. Take used batteries to an e-waste or battery collection point.",
+    "translations": {
+      "bn": {
+        "name": "AA / AAA ব্যাটারি",
+        "aliases": [
+          "ব্যাটারি"
+        ],
+        "tip": "সাধারণ পাত্রে ফেলবেন না। ব্যবহৃত ব্যাটারি গ্রহণ করে এমন সংগ্রহস্থলের সঙ্গে যোগাযোগ করুন।"
+      },
+      "hi": {
+        "name": "AA / AAA बैटरी",
+        "aliases": [
+          "बैटरी"
+        ],
+        "tip": "सामान्य कूड़ेदान में न डालें। इस्तेमाल की हुई बैटरी स्वीकार करने वाले संग्रह केंद्र से पूछें।"
+      }
+    }
+  },
+  {
+    "id": "phone-battery",
+    "name": "Phone / lithium battery",
+    "aliases": [
+      "li-ion battery",
+      "lithium cell",
+      "swollen battery",
+      "Phone / lithium battery"
+    ],
+    "category": "ewaste",
+    "placeTypes": [],
+    "tip": "Fire risk if damaged. Keep it away from heat and hand it in at an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "ফোন / লিথিয়াম ব্যাটারি",
+        "aliases": [
+          "ফোনের ব্যাটারি"
+        ],
+        "tip": "ক্ষতিগ্রস্ত ব্যাটারিতে আগুনের ঝুঁকি আছে। তাপ থেকে দূরে রাখুন; গ্রহণের ব্যবস্থা সম্পর্কে সংগ্রহস্থলকে জিজ্ঞেস করুন।"
+      },
+      "hi": {
+        "name": "फ़ोन / लिथियम बैटरी",
+        "aliases": [
+          "फ़ोन की बैटरी"
+        ],
+        "tip": "खराब बैटरी से आग का खतरा है। गर्मी से दूर रखें; संग्रह केंद्र से इसे स्वीकार करने की व्यवस्था पूछें।"
+      }
+    }
+  },
+  {
+    "id": "cfl-tube",
+    "name": "CFL / tube light",
+    "aliases": [
+      "tubelight",
+      "fluorescent",
+      "cfl bulb",
+      "CFL / tube light"
+    ],
+    "category": "ewaste",
+    "placeTypes": [],
+    "tip": "Contains mercury. Don't break it; take it to an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "CFL / টিউব লাইট",
+        "aliases": [
+          "টিউব লাইট"
+        ],
+        "tip": "পারদ থাকতে পারে। ভাঙবেন না। উপযুক্ত সংগ্রহস্থলের সঙ্গে যোগাযোগ করুন।"
+      },
+      "hi": {
+        "name": "CFL / ट्यूब लाइट",
+        "aliases": [
+          "ट्यूब लाइट"
+        ],
+        "tip": "इसमें पारा हो सकता है। तोड़ें नहीं। उपयुक्त संग्रह केंद्र से संपर्क करें।"
+      }
+    }
+  },
+  {
+    "id": "led-bulb",
+    "name": "LED bulb",
+    "aliases": [
+      "bulb",
+      "led",
+      "light bulb",
+      "bijli bulb",
+      "LED bulb"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "E-waste. Hand it in at an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "LED বাল্ব",
+        "aliases": [
+          "বাল্ব"
+        ],
+        "tip": "সাধারণ পাত্রে ফেলবেন না। এই জিনিস গ্রহণ করে এমন ইলেকট্রনিক বর্জ্য সংগ্রহস্থলে জমা দিন। যাওয়ার আগে গ্রহণের নিয়ম যাচাই করুন।"
+      },
+      "hi": {
+        "name": "LED बल्ब",
+        "aliases": [
+          "बल्ब"
+        ],
+        "tip": "सामान्य कूड़ेदान में न डालें। यह सामान स्वीकार करने वाले इलेक्ट्रॉनिक कचरा संग्रह केंद्र पर जमा करें। जाने से पहले नियम जाँचें।"
+      }
+    }
+  },
+  {
+    "id": "extension-board",
+    "name": "Extension board / electrical wires",
+    "aliases": [
+      "extension",
+      "power strip",
+      "wires",
+      "cord",
+      "Extension board"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "E-waste. Take it to an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "এক্সটেনশন বোর্ড / বৈদ্যুতিক তার",
+        "aliases": [
+          "এক্সটেনশন বোর্ড"
+        ],
+        "tip": "সাধারণ পাত্রে ফেলবেন না। এই জিনিস গ্রহণ করে এমন ইলেকট্রনিক বর্জ্য সংগ্রহস্থলে জমা দিন। যাওয়ার আগে গ্রহণের নিয়ম যাচাই করুন।"
+      },
+      "hi": {
+        "name": "एक्सटेंशन बोर्ड / बिजली के तार",
+        "aliases": [
+          "एक्सटेंशन बोर्ड"
+        ],
+        "tip": "सामान्य कूड़ेदान में न डालें। यह सामान स्वीकार करने वाले इलेक्ट्रॉनिक कचरा संग्रह केंद्र पर जमा करें। जाने से पहले नियम जाँचें।"
+      }
+    }
+  },
+  {
+    "id": "remote",
+    "name": "Remote control",
+    "aliases": [
+      "tv remote",
+      "ac remote",
+      "Remote control"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "Remove the batteries and take both to an e-waste point.",
+    "translations": {
+      "bn": {
+        "name": "রিমোট কন্ট্রোল",
+        "aliases": [
+          "রিমোট"
+        ],
+        "tip": "নিরাপদে সম্ভব হলে ব্যাটারি আলাদা করুন। দুটির জন্য উপযুক্ত সংগ্রহের ব্যবস্থা খুঁজুন।"
+      },
+      "hi": {
+        "name": "रिमोट कंट्रोल",
+        "aliases": [
+          "रिमोट"
+        ],
+        "tip": "सुरक्षित हो तो बैटरी अलग करें। दोनों के लिए सही संग्रह व्यवस्था खोजें।"
+      }
+    }
+  },
+  {
+    "id": "printer-cartridge",
+    "name": "Printer cartridge",
+    "aliases": [
+      "ink cartridge",
+      "toner",
+      "Printer cartridge"
+    ],
+    "category": "ewaste",
+    "placeTypes": [
+      "ewaste"
+    ],
+    "tip": "Many shops and e-waste collectors take these back.",
+    "translations": {
+      "bn": {
+        "name": "প্রিন্টার কার্ট্রিজ",
+        "aliases": [
+          "কার্ট্রিজ"
+        ],
+        "tip": "সাধারণ পাত্রে ফেলবেন না। এই জিনিস গ্রহণ করে এমন ইলেকট্রনিক বর্জ্য সংগ্রহস্থলে জমা দিন। যাওয়ার আগে গ্রহণের নিয়ম যাচাই করুন।"
+      },
+      "hi": {
+        "name": "प्रिंटर कार्ट्रिज",
+        "aliases": [
+          "कार्ट्रिज"
+        ],
+        "tip": "सामान्य कूड़ेदान में न डालें। यह सामान स्वीकार करने वाले इलेक्ट्रॉनिक कचरा संग्रह केंद्र पर जमा करें। जाने से पहले नियम जाँचें।"
+      }
+    }
+  },
+  {
+    "id": "plastic-bottle",
+    "name": "Plastic bottle",
+    "aliases": [
+      "pet bottle",
+      "water bottle",
+      "bottle",
+      "Plastic bottle",
+      "botol"
+    ],
+    "category": "dry",
+    "placeTypes": [
+      "recycling",
+      "dustbin"
+    ],
+    "tip": "Empty and rinse if you can. Put in dry waste or a recycling point.",
+    "translations": {
+      "bn": {
+        "name": "প্লাস্টিকের বোতল",
+        "aliases": [
+          "বোতল"
+        ],
+        "tip": "পরিষ্কার ও শুকনো রাখুন। উপযুক্ত পুনর্ব্যবহার বা শুকনো বর্জ্য সংগ্রহস্থল ব্যবহার করুন।"
+      },
+      "hi": {
+        "name": "प्लास्टिक की बोतल",
+        "aliases": [
+          "बोतल"
+        ],
+        "tip": "साफ़ और सूखा रखें। उपयुक्त रीसाइक्लिंग या सूखे कचरे का संग्रह स्थल इस्तेमाल करें।"
+      }
+    }
+  },
+  {
+    "id": "plastic-wrapper",
+    "name": "Plastic wrapper / chips packet",
+    "aliases": [
+      "wrapper",
+      "packet",
+      "chips packet",
+      "plastic bag",
+      "polythene",
+      "Plastic wrapper"
+    ],
+    "category": "dry",
+    "placeTypes": [
+      "dustbin",
+      "recycling"
+    ],
+    "tip": "Dry waste. Don't litter; use a dustbin.",
+    "translations": {
+      "bn": {
+        "name": "প্লাস্টিকের মোড়ক / চিপসের প্যাকেট",
+        "aliases": [
+          "মোড়ক"
+        ],
+        "tip": "পরিষ্কার ও শুকনো রাখুন। উপযুক্ত পুনর্ব্যবহার বা শুকনো বর্জ্য সংগ্রহস্থল ব্যবহার করুন।"
+      },
+      "hi": {
+        "name": "प्लास्टिक रैपर / चिप्स का पैकेट",
+        "aliases": [
+          "रैपर"
+        ],
+        "tip": "साफ़ और सूखा रखें। उपयुक्त रीसाइक्लिंग या सूखे कचरे का संग्रह स्थल इस्तेमाल करें।"
+      }
+    }
+  },
+  {
+    "id": "paper",
+    "name": "Paper / newspaper",
+    "aliases": [
+      "newspaper",
+      "notebook paper",
+      "kagaz",
+      "raddi",
+      "Paper"
+    ],
+    "category": "dry",
+    "placeTypes": [
+      "recycling",
+      "dustbin"
+    ],
+    "tip": "Keep it clean and dry; recyclable.",
+    "translations": {
+      "bn": {
+        "name": "কাগজ / খবরের কাগজ",
+        "aliases": [
+          "কাগজ"
+        ],
+        "tip": "পরিষ্কার ও শুকনো রাখুন। উপযুক্ত পুনর্ব্যবহার বা শুকনো বর্জ্য সংগ্রহস্থল ব্যবহার করুন।"
+      },
+      "hi": {
+        "name": "कागज़ / अख़बार",
+        "aliases": [
+          "कागज़"
+        ],
+        "tip": "साफ़ और सूखा रखें। उपयुक्त रीसाइक्लिंग या सूखे कचरे का संग्रह स्थल इस्तेमाल करें।"
+      }
+    }
+  },
+  {
+    "id": "cardboard",
+    "name": "Cardboard box",
+    "aliases": [
+      "carton",
+      "box",
+      "gatta",
+      "Cardboard"
+    ],
+    "category": "dry",
+    "placeTypes": [
+      "recycling",
+      "dustbin"
+    ],
+    "tip": "Flatten it and keep it dry for recycling.",
+    "translations": {
+      "bn": {
+        "name": "কার্ডবোর্ডের বাক্স",
+        "aliases": [
+          "বাক্স"
+        ],
+        "tip": "পরিষ্কার ও শুকনো রাখুন। উপযুক্ত পুনর্ব্যবহার বা শুকনো বর্জ্য সংগ্রহস্থল ব্যবহার করুন।"
+      },
+      "hi": {
+        "name": "गत्ते का डिब्बा",
+        "aliases": [
+          "गत्ता"
+        ],
+        "tip": "साफ़ और सूखा रखें। उपयुक्त रीसाइक्लिंग या सूखे कचरे का संग्रह स्थल इस्तेमाल करें।"
+      }
+    }
+  },
+  {
+    "id": "glass-bottle",
+    "name": "Glass bottle",
+    "aliases": [
+      "glass",
+      "jar",
+      "kaanch",
+      "Glass bottle"
+    ],
+    "category": "dry",
+    "placeTypes": [
+      "recycling",
+      "dustbin"
+    ],
+    "tip": "Wrap broken glass in paper and label it so handlers are safe.",
+    "translations": {
+      "bn": {
+        "name": "কাঁচের বোতল",
+        "aliases": [
+          "কাঁচের বোতল"
+        ],
+        "tip": "অক্ষত কাঁচ আলাদা রাখুন। ভাঙা কাঁচ নিরাপদে মুড়ে চিহ্নিত করুন যাতে সংগ্রহকারীর আঘাত না লাগে।"
+      },
+      "hi": {
+        "name": "काँच की बोतल",
+        "aliases": [
+          "काँच"
+        ],
+        "tip": "साबुत काँच अलग रखें। टूटे काँच को सुरक्षित लपेटकर पहचान दें ताकि संग्रह करने वाले को चोट न लगे।"
+      }
+    }
+  },
+  {
+    "id": "metal-can",
+    "name": "Metal can / tin",
+    "aliases": [
+      "tin",
+      "can",
+      "steel can",
+      "soft drink can",
+      "Metal can"
+    ],
+    "category": "dry",
+    "placeTypes": [
+      "recycling",
+      "dustbin"
+    ],
+    "tip": "Rinse it and put it in dry waste or a recycling point.",
+    "translations": {
+      "bn": {
+        "name": "ধাতব ক্যান / টিন",
+        "aliases": [
+          "টিন"
+        ],
+        "tip": "পরিষ্কার ও শুকনো রাখুন। উপযুক্ত পুনর্ব্যবহার বা শুকনো বর্জ্য সংগ্রহস্থল ব্যবহার করুন।"
+      },
+      "hi": {
+        "name": "धातु का कैन / टिन",
+        "aliases": [
+          "टिन"
+        ],
+        "tip": "साफ़ और सूखा रखें। उपयुक्त रीसाइक्लिंग या सूखे कचरे का संग्रह स्थल इस्तेमाल करें।"
+      }
+    }
+  },
+  {
+    "id": "food-scraps",
+    "name": "Food scraps / leftovers",
+    "aliases": [
+      "leftover food",
+      "khana",
+      "food waste",
+      "wet waste",
+      "Food scraps"
+    ],
+    "category": "wet",
+    "placeTypes": [
+      "dustbin"
+    ],
+    "tip": "Wet waste. Use a wet or general bin; composting is best if available.",
+    "translations": {
+      "bn": {
+        "name": "উচ্ছিষ্ট খাবার",
+        "aliases": [
+          "খাবার"
+        ],
+        "tip": "ভেজা বর্জ্যের সংগ্রহস্থল ব্যবহার করুন। উপযুক্ত ব্যবস্থা থাকলে কম্পোস্ট করুন।"
+      },
+      "hi": {
+        "name": "बचा हुआ खाना",
+        "aliases": [
+          "खाना"
+        ],
+        "tip": "गीले कचरे की संग्रह व्यवस्था इस्तेमाल करें। उपयुक्त सुविधा हो तो कम्पोस्ट करें।"
+      }
+    }
+  },
+  {
+    "id": "fruit-peels",
+    "name": "Fruit / vegetable peels",
+    "aliases": [
+      "peels",
+      "chilka",
+      "vegetable waste",
+      "banana peel",
+      "Fruit peels"
+    ],
+    "category": "wet",
+    "placeTypes": [
+      "dustbin"
+    ],
+    "tip": "Wet waste, which is good for composting.",
+    "translations": {
+      "bn": {
+        "name": "ফল / সবজির খোসা",
+        "aliases": [
+          "খোসা"
+        ],
+        "tip": "ভেজা বর্জ্যের সংগ্রহস্থল ব্যবহার করুন। উপযুক্ত ব্যবস্থা থাকলে কম্পোস্ট করুন।"
+      },
+      "hi": {
+        "name": "फल / सब्ज़ी के छिलके",
+        "aliases": [
+          "छिलके"
+        ],
+        "tip": "गीले कचरे की संग्रह व्यवस्था इस्तेमाल करें। उपयुक्त सुविधा हो तो कम्पोस्ट करें।"
+      }
+    }
+  },
+  {
+    "id": "tea-coffee",
+    "name": "Tea bags / coffee grounds",
+    "aliases": [
+      "tea leaves",
+      "chai patti",
+      "coffee",
+      "Tea / coffee"
+    ],
+    "category": "wet",
+    "placeTypes": [
+      "dustbin"
+    ],
+    "tip": "Wet waste, which is good for composting.",
+    "translations": {
+      "bn": {
+        "name": "চা পাতা / কফির গুঁড়ো",
+        "aliases": [
+          "চা পাতা"
+        ],
+        "tip": "ভেজা বর্জ্যের সংগ্রহস্থল ব্যবহার করুন। উপযুক্ত ব্যবস্থা থাকলে কম্পোস্ট করুন।"
+      },
+      "hi": {
+        "name": "चाय की पत्ती / कॉफ़ी",
+        "aliases": [
+          "चाय"
+        ],
+        "tip": "गीले कचरे की संग्रह व्यवस्था इस्तेमाल करें। उपयुक्त सुविधा हो तो कम्पोस्ट करें।"
+      }
+    }
+  },
+  {
+    "id": "garden-leaves",
+    "name": "Flowers / garden leaves",
+    "aliases": [
+      "leaves",
+      "flowers",
+      "garden waste",
+      "puja flowers",
+      "Flowers / leaves"
+    ],
+    "category": "wet",
+    "placeTypes": [
+      "dustbin"
+    ],
+    "tip": "Wet waste or compost.",
+    "translations": {
+      "bn": {
+        "name": "ফুল / বাগানের পাতা",
+        "aliases": [
+          "পাতা"
+        ],
+        "tip": "ভেজা বর্জ্যের সংগ্রহস্থল ব্যবহার করুন। উপযুক্ত ব্যবস্থা থাকলে কম্পোস্ট করুন।"
+      },
+      "hi": {
+        "name": "फूल / बगीचे की पत्तियाँ",
+        "aliases": [
+          "पत्तियाँ"
+        ],
+        "tip": "गीले कचरे की संग्रह व्यवस्था इस्तेमाल करें। उपयुक्त सुविधा हो तो कम्पोस्ट करें।"
+      }
+    }
+  },
+  {
+    "id": "sanitary-pad",
+    "name": "Sanitary pad / diaper",
+    "aliases": [
+      "pad",
+      "diaper",
+      "napkin",
+      "tampon",
+      "Sanitary pad"
+    ],
+    "category": "sanitary_medical",
+    "placeTypes": [],
+    "tip": "Wrap it in paper and mark it so handlers can identify it. Don't flush it.",
+    "translations": {
+      "bn": {
+        "name": "স্যানিটারি প্যাড / ডায়াপার",
+        "aliases": [
+          "প্যাড"
+        ],
+        "tip": "নিরাপদে মুড়ে চিহ্নিত করুন। স্থানীয় সংগ্রহের নিয়ম মানুন; শৌচালয়ে ফেলবেন না।"
+      },
+      "hi": {
+        "name": "सैनिटरी पैड / डायपर",
+        "aliases": [
+          "पैड"
+        ],
+        "tip": "सुरक्षित लपेटकर पहचान दें। स्थानीय संग्रह के नियम मानें; शौचालय में न बहाएँ।"
+      }
+    }
+  },
+  {
+    "id": "mask-bandage",
+    "name": "Used mask / bandage",
+    "aliases": [
+      "mask",
+      "bandage",
+      "cotton",
+      "gauze",
+      "Mask / bandage"
+    ],
+    "category": "sanitary_medical",
+    "placeTypes": [],
+    "tip": "Wrap it before disposal. Use the sanitary waste stream where your area has one.",
+    "translations": {
+      "bn": {
+        "name": "ব্যবহৃত মাস্ক / ব্যান্ডেজ",
+        "aliases": [
+          "মাস্ক"
+        ],
+        "tip": "স্থানীয় স্বাস্থ্যবিধি বা চিকিৎসার বর্জ্য সংগ্রহের নিয়ম মেনে চলুন। শৌচালয়ে ফেলবেন না।"
+      },
+      "hi": {
+        "name": "इस्तेमाल किया हुआ मास्क / पट्टी",
+        "aliases": [
+          "मास्क"
+        ],
+        "tip": "स्थानीय स्वच्छता या चिकित्सा कचरा संग्रह के नियम मानें। शौचालय में न बहाएँ।"
+      }
+    }
+  },
+  {
+    "id": "expired-medicine",
+    "name": "Expired medicine",
+    "aliases": [
+      "medicine",
+      "tablets",
+      "dawai",
+      "syrup",
+      "Expired medicine"
+    ],
+    "category": "sanitary_medical",
+    "placeTypes": [],
+    "tip": "Don't flush or throw loose. Ask a pharmacy or hospital about take-back.",
+    "translations": {
+      "bn": {
+        "name": "মেয়াদোত্তীর্ণ ওষুধ",
+        "aliases": [
+          "ওষুধ"
+        ],
+        "tip": "শৌচালয়ে ফেলবেন না। ফেরত নেওয়ার ব্যবস্থা আছে কি না ফার্মেসি বা হাসপাতালকে জিজ্ঞেস করুন।"
+      },
+      "hi": {
+        "name": "एक्सपायर दवा",
+        "aliases": [
+          "दवा"
+        ],
+        "tip": "शौचालय में न बहाएँ। फ़ार्मेसी या अस्पताल से वापस लेने की सुविधा पूछें।"
+      }
+    }
+  },
+  {
+    "id": "paint-can",
+    "name": "Paint can",
+    "aliases": [
+      "paint",
+      "varnish",
+      "thinner",
+      "Paint can"
+    ],
+    "category": "hazardous",
+    "placeTypes": [],
+    "tip": "Hazardous. Don't pour it down a drain; ask your municipal body about hazardous waste.",
+    "translations": {
+      "bn": {
+        "name": "রঙের কৌটো",
+        "aliases": [
+          "রং"
+        ],
+        "tip": "নর্দমায় ঢালবেন না বা সাধারণ পাত্রে ফেলবেন না। স্থানীয় কর্তৃপক্ষের কাছে উপযুক্ত সংগ্রহের ব্যবস্থা জেনে নিন।"
+      },
+      "hi": {
+        "name": "पेंट का डिब्बा",
+        "aliases": [
+          "पेंट"
+        ],
+        "tip": "नाली या सामान्य कूड़ेदान में न डालें। स्थानीय अधिकारियों से सही संग्रह व्यवस्था पूछें।"
+      }
+    }
+  },
+  {
+    "id": "aerosol",
+    "name": "Aerosol / spray can",
+    "aliases": [
+      "spray",
+      "deodorant can",
+      "insect spray",
+      "Spray can"
+    ],
+    "category": "hazardous",
+    "placeTypes": [],
+    "tip": "Hazardous when pressurised. Don't puncture or burn; ask about hazardous waste collection.",
+    "translations": {
+      "bn": {
+        "name": "স্প্রে ক্যান",
+        "aliases": [
+          "স্প্রে"
+        ],
+        "tip": "ফুটো করবেন না বা পোড়াবেন না। বিপজ্জনক বর্জ্য সংগ্রহ সম্পর্কে স্থানীয় কর্তৃপক্ষকে জিজ্ঞেস করুন।"
+      },
+      "hi": {
+        "name": "स्प्रे कैन",
+        "aliases": [
+          "स्प्रे"
+        ],
+        "tip": "छेद न करें या जलाएँ नहीं। खतरनाक कचरा संग्रह के बारे में स्थानीय अधिकारियों से पूछें।"
+      }
+    }
+  },
+  {
+    "id": "chemical-bottle",
+    "name": "Pesticide / chemical bottle",
+    "aliases": [
+      "pesticide",
+      "chemical",
+      "cleaner bottle",
+      "acid",
+      "Chemical bottle"
+    ],
+    "category": "hazardous",
+    "placeTypes": [],
+    "tip": "Hazardous. Don't reuse the bottle; ask your municipal body about hazardous waste.",
+    "translations": {
+      "bn": {
+        "name": "কীটনাশক / রাসায়নিকের বোতল",
+        "aliases": [
+          "রাসায়নিক"
+        ],
+        "tip": "নর্দমায় ঢালবেন না বা সাধারণ পাত্রে ফেলবেন না। স্থানীয় কর্তৃপক্ষের কাছে উপযুক্ত সংগ্রহের ব্যবস্থা জেনে নিন।"
+      },
+      "hi": {
+        "name": "कीटनाशक / रसायन की बोतल",
+        "aliases": [
+          "रसायन"
+        ],
+        "tip": "नाली या सामान्य कूड़ेदान में न डालें। स्थानीय अधिकारियों से सही संग्रह व्यवस्था पूछें।"
+      }
+    }
+  }
+]

@@ -1,0 +1,14 @@
+node_modules/
+.npm-cache/
+frontend/dist/
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+.aws-sam/
+.local-data/
+.demo-artifacts/
+*.log
+.DS_Store

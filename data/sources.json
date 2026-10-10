@@ -1,0 +1,11 @@
+{
+  "researchDate": "2026-10-10", "fieldChecks": false,
+  "areaRationale": "One central Kolkata pilot window covering Esplanade, College Street and nearby mapped services. Not an administrative boundary or citywide directory.",
+  "sources": [
+    {"id":"osm", "url":"https://www.openstreetmap.org/copyright", "method":"One-time bounded Nominatim amenity searches after Overpass failures; results retain individual OSM source URLs.", "limitations":"18 public/unknown-access toilet candidates; private/customer-only entries excluded. No bins or recycling points returned; this is not proof none exist. Unknown access and current condition remain uncertain. No field checks or community votes implied."},
+    {"id":"croma-programme", "url":"https://www.croma.com/lp-croma-e-waste", "evidence":"Operator states its stores function as e-waste collection centres.", "limitations":"Specific item acceptance and service availability should be checked before travel. Battery and mercury-bearing items are not routed to this record."},
+    {"id":"croma-location", "url":"https://store.croma.com/croma-park-street-electronics-retail-and-repair-shop-park-street-area-kolkata-263521/Home", "evidence":"Operator-published address: 31 Chowringhee Road, opposite Apeejay House. geo.position metadata: 22.55948473;88.3498563.", "limitations":"Published pin has not been checked in person."},
+    {"id":"kmc-ewaste", "url":"https://www.kmcgov.in/KMCPortal/jsp/EWaste.jsp", "evidence":"KMC lists Dhapa Garage, Tangra and a contact route for disposal.", "limitations":"Not seeded: exact drop-off pin and current public access were not established."},
+    {"id":"kmc-historical-toilets", "url":"https://www.kmcgov.in/KMCPortal/downloads/pay_toilets_05_11_2015.pdf", "sourceDate":"2015-11-05", "limitations":"Historical list only; not imported as current verified facilities."}
+  ]
+}

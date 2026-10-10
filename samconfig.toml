@@ -1,0 +1,8 @@
+version = 0.1
+[default.deploy.parameters]
+stack_name = "kahaan"
+region = "ap-south-1"
+resolve_s3 = true
+s3_prefix = "kahaan-demo"
+capabilities = "CAPABILITY_IAM"
+confirm_changeset = true

@@ -1,0 +1,8 @@
+{
+  "profile":"product-admin", "sourceRoots":["frontend/src"], "locale":"en-IN",
+  "canonicalMap":"UX-CONTRACT.md", "requiredCapabilities":["Select/Listbox","Form","Scrollbar","Toast","CRUD"],
+  "ownership":{"Select/Listbox":"native","Form":"authored","Scrollbar":"authored","Toast":"authored","CRUD":"authored"},
+  "requiredCommands":["unit","typecheck","build"],
+  "commands":{"unit":"npm test","typecheck":"npm run typecheck","build":"npm run build"},
+  "evidence":{"crudFullFlow":"backend/tests/service.test.mjs","failurePaths":"backend/tests/domain.test.mjs"}
+}

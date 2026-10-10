@@ -1,0 +1,10 @@
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { publicPlace } from '../backend/src/lib/domain.mjs';
+await mkdir('frontend/public/data',{recursive:true});
+const area = await readFile('data/area.json','utf8');
+await writeFile('backend/area.json',area);
+await writeFile('frontend/public/data/area.json',area);
+const osm = await readFile('data/osm_places.json','utf8').catch(()=> '[]');
+const manual = await readFile('data/manual_places.json','utf8');
+await writeFile('backend/seed_places.json',JSON.stringify([...JSON.parse(osm),...JSON.parse(manual)],null,2));
+await writeFile('frontend/public/data/places.json',JSON.stringify([...JSON.parse(osm),...JSON.parse(manual)].map(publicPlace),null,2));

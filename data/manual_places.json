@@ -1,0 +1,13 @@
+[
+  {
+    "placeId": "operator-croma-park-street", "area": "kolkata-central",
+    "type": "ewaste", "name": "Croma · Park Street", "lat": 22.55948473, "lng": 88.3498563,
+    "note": "31 Chowringhee Road, opposite Apeejay House. Croma publishes an e-waste collection programme; check acceptance before travelling.",
+    "source": "manual", "sourceUrl": "https://www.croma.com/lp-croma-e-waste",
+    "locationSourceUrl": "https://store.croma.com/croma-park-street-electronics-retail-and-repair-shop-park-street-area-kolkata-263521/Home",
+    "researchDate": "2026-10-10", "createdBy": "seed", "createdAt": "2026-10-10T00:00:00Z",
+    "confirmCount": 0, "reportCount": 0,
+    "acceptedItemIds": ["phone-charger", "usb-cable", "old-phone", "earphones", "laptop", "keyboard-mouse", "led-bulb", "extension-board", "remote"],
+    "recommendable": true
+  }
+]
