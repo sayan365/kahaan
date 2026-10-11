@@ -205,7 +205,9 @@ Rules: validate every field (type whitelist, lengths, finite numbers, point insi
 
 ---
 
-## 10. Frontend UX (mobile-first, single page)
+## 10. Frontend UX (mobile-first, focused views)
+
+The owner's 11 October design decision replaces the original single-page presentation with Start, Nearby and How it works views. Hash navigation preserves search/filter URLs and browser history on static hosting. Start prioritises choosing a need; Nearby owns results and the list/map; How it works explains sources and community contributions. Details, sign-in and contributions remain focused dialogs. See [the interface review](docs/UX-POLISH.md) for the implemented layout and verification limits.
 
 - **Home:** three large choices: "Find a toilet", "Find a bin or collection point", "Give away old electronics". Optional item search and familiar item buttons such as Charger, Old phone and Plastic bottle. No login required.
 - **Language:** English / বাংলা / हिन्दी switcher visible from the home screen and results. Persist the selection in localStorage, update the page `lang`, and preserve the current query, selected place and map position when switching. Use dictionaries for `en`, `bn`, `hi` with English fallback; no translation service or additional package. Local reviewers should check Bengali and Hindi wording before submission.

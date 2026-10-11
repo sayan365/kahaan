@@ -2,6 +2,8 @@
 
 Find a toilet, a bin or the right place for old electronics in Kolkata. English is the default; Bengali and Hindi are supported across browsing, search, forms and feedback. Anyone can browse. Accounts are required to add, confirm or report a place.
 
+Start with a need, browse the dedicated Nearby list/map, or read How it works for source and community-check information. Search and filters are retained in shareable hash URLs. The modern minimalist interface uses self-hosted Manrope under the included SIL Open Font License. [Interface review and design plan](docs/UX-POLISH.md).
+
 Try the [temporary AWS demo](https://demo.dato5zt1h00lk.amplifyapp.com), or run the application locally using the commands below. The hosted demo may be retired after judging; local development uses the committed source data and does not depend on that deployment or an AWS account. Internet access is needed for map tiles and external directions.
 
 [Setup and troubleshooting](docs/SETUP.md) · [Contributing](CONTRIBUTING.md) · [Verification evidence](VERIFICATION.md) · [Costs and shutdown](AWS-DEMO.md) · [Submission checklist](SUBMISSION.md)

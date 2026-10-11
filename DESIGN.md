@@ -2,27 +2,27 @@
 version: alpha
 colors:
   primary: "#176b59"
-  ink: "#172e29"
-  muted: "#53665f"
-  background: "#f2f6f3"
+  ink: "#182b26"
+  muted: "#5f7068"
+  background: "#f7f9f8"
   surface: "#ffffff"
   accent: "#f4c85b"
-  border: "#d6e1db"
+  border: "#dee6e1"
   scrollbarThumb: "#91aaa0"
   scrollbarHover: "#53665f"
 typography:
   display:
-    fontFamily: "Georgia, Nirmala UI, serif"
+    fontFamily: "Manrope, Nirmala UI, sans-serif"
   body:
-    fontFamily: "Segoe UI, Nirmala UI, sans-serif"
+    fontFamily: "Manrope, Nirmala UI, sans-serif"
 rounded:
-  card: "20px"
-  control: "12px"
+  card: "16px"
+  control: "10px"
 spacing:
   unit: "8px"
 components:
   NeedCard:
-    height: "120px"
+    height: "84px"
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
     rounded: "{rounded.card}"
@@ -36,22 +36,22 @@ components:
 # Kahaan design context
 
 ## Overview
-Product register: a neighbourhood wayfinding desk for people on the move in Kolkata. One job: make the next suitable place easy to choose. Signature: three illustrated signpost cards for toilets, bins and electronics, paired with a real civic map. Avoid dashboard tiles, environmental impact counters and ornamental skyline graphics.
+Product register: a neighbourhood wayfinding desk for people on the move in Kolkata. One job: make the next suitable place easy to choose. Signature: a bold two-line wayfinding headline, three compact need rows and a real Kolkata map. The owner requested a modern minimalist redesign on 11 October 2026. Avoid dashboard tiles, environmental impact counters and ornamental skyline graphics.
 
 ## Colors
-Leaf green conveys wayfinding. Yellow highlights electronics without turning uncertainty into a success colour. White list and map surfaces sit against a pale green page. CSS custom properties in frontend/src/styles.css implement the frontmatter; all shared controls consume those variables. Type-specific marker colours are defined once in the map component and matching stylesheet classes.
+Leaf green conveys wayfinding. Yellow highlights electronics without turning uncertainty into a success colour. White list and map surfaces sit against a pale green page. Runtime CSS variables in frontend/src/styles.css are the canonical token owner; frontmatter mirrors the accepted values. Shared controls consume those variables; all shared controls consume those variables. Type-specific marker colours are defined once in the map component and matching stylesheet classes.
 
 ## Typography
-Georgia adds a restrained human display headline; Segoe UI and Nirmala UI carry functional English, Bengali and Devanagari. Native system fonts avoid layout shifts. Localized body text uses generous line height and wraps rather than truncates.
+Self-hosted variable Manrope carries English display and body text with deliberate weight and tracking. Nirmala UI carries Bengali and Devanagari when unavailable in Manrope. Font-display swap and a local font avoid third-party font calls; the SIL Open Font License is shipped with the asset. Localized body text uses generous line height and wraps rather than truncates.
 
 ## Layout
-Desktop: compact header, three choices, then a list/map split. Mobile: stacked choices and results with an explicit List/Map toggle. Natural document scrolling; no locked viewport. Maximum content width 1320px; breakpoint 760px; 8px spacing rhythm.
+Three hash-routed views: Start, Nearby and How it works. Desktop Start uses an asymmetric introduction/map split; Nearby uses a nearest-first list and sticky companion map. Mobile Start prioritizes compact need choices; Nearby has List/Map controls, and a persistent three-link bottom navigation connects views. Natural document scrolling; no locked shared viewport. Maximum content width 1280px; breakpoint 760px; 8px spacing rhythm.
 
 ## Elevation & Depth
 Flat cards with borders. A light shadow belongs only to selected place panels and modal overlays.
 
 ## Shapes
-20px cards, 12px controls; rounded type markers and clear text labels. Icons are simple code-native line drawings, always accompanied by text.
+16px panels, 10px controls; compact type markers and clear text labels. Need choices are rows instead of equal cards. Icons are simple code-native line drawings, always accompanied by text.
 
 ## Components
 Shared Button, Field, Dialog and Status primitives. Visible focus rings, 44px touch targets, reserved error regions, app-owned native dialog with focus restoration. Global visible scrollbar baseline. No animations needed beyond short colour transitions; respect reduced motion.

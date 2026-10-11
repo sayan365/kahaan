@@ -1,5 +1,13 @@
 # Verification evidence
 
+## Interface polish (11 October 2026)
+
+- Modern minimalist Start, Nearby and How it works views replace the long combined page. Hash URLs restore filters and multilingual search; browser back and refresh were checked. Manrope is self-hosted with its license.
+- All 15 tests, TypeScript and the production build passed. The strict premium UI audit reported zero findings. Design-document lint reported zero errors and five orphaned-token warnings.
+- Chrome desktop and 360px mobile were inspected. English, Bengali and Hindi Start screens fit without horizontal overflow. Mobile map/list switching worked; charger results were relevant and battery search had no evidenced destination. Place details, signed-out reporting, explicit local simulated sign-in and add-place validation were checked. A missing location focused the coordinate field and preserved the entered name; no QA record or vote was submitted.
+- The local persisted catalogue still contained 19 records; it was not reset. This does not supersede the live 31-record catalogue. Browser emulation is not a physical-device test, and native-language review and independent cloud voting remain outstanding.
+- The polished frontend ZIP was deployed to the existing Amplify `demo` branch. Live Chrome loaded the new Start view with 31 online-sourced listings; charger search showed Croma as the single relevant result. No warning/error logs appeared in that checked flow. No AWS infrastructure was added.
+
 Date: 2026-10-10. Environment: Windows, Node 24.14.0.
 
 - Final commands passed: `npm test` (14 tests), `npm run typecheck`, `npm run build`, strict premium UI audit and DESIGN.md lint (zero errors).

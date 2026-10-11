@@ -8,10 +8,10 @@ export function Field({ label, children, error }: { label: string; children: Rea
   const control = error && isValidElement(children) ? cloneElement(children as ReactElement<Record<string, unknown>>, { 'aria-describedby': errorId }) : children;
   return <label className="field"><span>{label}</span>{control}{error && <span id={errorId} className="field-error" role="alert">{error}</span>}</label>;
 }
-export function Dialog({ title, children, onClose, locale }: { title: string; children: ReactNode; onClose: () => void; locale: Locale }) {
+export function Dialog({ title, children, onClose, locale, className = '' }: { className?: string; title: string; children: ReactNode; onClose: () => void; locale: Locale }) {
   const ref = useRef<HTMLDialogElement>(null); const titleId = useId();
   useEffect(() => { const previous = document.activeElement as HTMLElement; const dialog = ref.current!; dialog.showModal(); return () => { dialog.close(); previous?.focus(); }; }, []);
-  return <dialog ref={ref} aria-labelledby={titleId} onCancel={e => { e.preventDefault(); onClose(); }}><div className="dialog-head"><h2 id={titleId}>{title}</h2><Button className="icon-button" onClick={onClose} aria-label={text(locale, 'close')}>×</Button></div><div className="dialog-body">{children}</div></dialog>;
+  return <dialog className={className} ref={ref} aria-labelledby={titleId} onCancel={e => { e.preventDefault(); onClose(); }}><div className="dialog-head"><h2 id={titleId}>{title}</h2><Button className="icon-button" onClick={onClose} aria-label={text(locale, 'close')}>×</Button></div><div className="dialog-body">{children}</div></dialog>;
 }
 export function Icon({ type, size = 28 }: { type: PlaceType | 'pin' | 'search' | 'arrow'; size?: number }) {
   const paths = {
