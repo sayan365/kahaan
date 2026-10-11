@@ -16,11 +16,13 @@ Finding a facility is only useful if you can understand what it is, where its in
 
 - **Start with a need:** toilets, everyday waste or old electronics. No account required to browse.
 - **Search what you are holding:** 30 items, typo-tolerant search and aliases in all three languages.
-- **Choose a suitable place:** nearest-first list/map, item-specific acceptance, source links and clearly labelled distance origin.
+- **Choose a suitable place:** map-first Nearby with nearest-first results, item-specific acceptance, source links and clearly labelled distance origin.
 - **Contribute:** add a pin, confirm a listing or report a problem after signing in.
 - **Understand the evidence:** source data starts with zero votes. Community confirmation does not establish regulatory authorisation.
 
 Start, Nearby and How it works are separate views. Search/filter URLs survive refresh and browser navigation. Location permission is optional; without it, distance is measured from the pilot centre. No runtime AI calls are used.
+
+![Nearby: floating search controls, sourced results and the Kolkata map](docs/images/nearby.png)
 
 ## Run locally
 

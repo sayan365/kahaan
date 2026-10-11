@@ -13,6 +13,24 @@ export function Dialog({ title, children, onClose, locale, className = '' }: { c
   useEffect(() => { const previous = document.activeElement as HTMLElement; const dialog = ref.current!; dialog.showModal(); return () => { dialog.close(); previous?.focus(); }; }, []);
   return <dialog className={className} ref={ref} aria-labelledby={titleId} onCancel={e => { e.preventDefault(); onClose(); }}><div className="dialog-head"><h2 id={titleId}>{title}</h2><Button className="icon-button" onClick={onClose} aria-label={text(locale, 'close')}>×</Button></div><div className="dialog-body">{children}</div></dialog>;
 }
+// A modeless map detail panel: keep the map and results keyboard-operable.
+export function PlacePanel({ title, children, onClose, locale }: { title: string; children: ReactNode; onClose: () => void; locale: Locale }) {
+  const ref = useRef<HTMLElement>(null), heading = useRef<HTMLHeadingElement>(null), titleId = useId();
+  const close = useRef(onClose); close.current = onClose;
+  const previousFocus = useRef<HTMLElement | null>(null);
+  const dismiss = () => { if (ref.current?.contains(document.activeElement) && previousFocus.current?.isConnected) previousFocus.current.focus({ preventScroll: true }); close.current(); };
+  useEffect(() => {
+    const previous = document.activeElement as HTMLElement, panel = ref.current;
+    previousFocus.current = previous;
+    heading.current?.focus({ preventScroll: true });
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !document.querySelector('dialog[open]')) { event.preventDefault(); dismiss(); }
+    };
+    document.addEventListener('keydown', escape);
+    return () => { document.removeEventListener('keydown', escape); if (panel?.contains(document.activeElement) && previous?.isConnected) previous.focus({ preventScroll: true }); };
+  }, []);
+  return <section className="map-detail-panel" ref={ref} aria-labelledby={titleId}><div className="dialog-head"><h2 id={titleId} ref={heading} tabIndex={-1}>{title}</h2><Button className="icon-button" onClick={dismiss} aria-label={text(locale, 'close')}>×</Button></div><div className="dialog-body">{children}</div></section>;
+}
 export function Icon({ type, size = 28 }: { type: PlaceType | 'pin' | 'search' | 'arrow'; size?: number }) {
   const paths = {
     toilet: <><circle cx="9" cy="5" r="2"/><path d="M6 20v-6H4l3-6h4l3 6h-2v6M18 4v16"/></>,

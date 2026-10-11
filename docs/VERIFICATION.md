@@ -49,3 +49,12 @@ Demo cost preparation: API throttle lowered to 5 req/s, burst 10; stack-managed 
 - The updated runtime ZIP was uploaded to the existing Lambda. Its seed invocation succeeded (1334.47 ms); the normal API handler was restored and visibly verified. Public GET then returned 31 records: 26 toilets, two bins/waste points, two e-waste listings and one recycling service office. All counters remained zero.
 - Live Chrome showed 31 places, two bin results and the recycling service-office candidate. Its detail displayed uncertainty, source link, zero votes and the report action. Plastic-bottle search suggested only the mapped litter bin; charger still suggested Croma; batteries had no suitable destination. Three browse-only candidates remained excluded from item recommendations.
 - No field checks or independent community confirmations were added. Some OSM toilet records share a building; the count is listings, not independent buildings. See data/RESEARCH.md for sources and exclusions.
+
+## Nearby map redesign (11 October 2026)
+
+- Desktop and 360px mobile browser checks covered all 31 listings, charger guidance, category reset, empty battery destinations, full-page mobile card browsing, selected details, source/directions links, English/Bengali/Hindi layouts, and navigation to How it works. Native-language review and physical-device testing remain unperformed.
+- Marker Enter activation, detail Escape and trigger-focus restoration were exercised. The local signed-out confirmation action opened the existing simulated sign-in dialog; Escape cancelled it without a write.
+- Mobile markers were checked by DOM geometry after resize: both bin markers were between the toolbar and collapsed results sheet. Source status and zoom labels update with locale.
+- The frontend was deployed to the existing Amplify demo. Live checks showed 31 records, Croma guidance and zero community counters, keyboard details and Bengali mobile controls. No new backend resources or data were introduced.
+
+- Final review moved selection clearing into search/filter/navigation actions so a newly saved contribution remains selected after its route changes. Mobile card selection returns to Map with details. Full-page List mode was checked at 390px and in Hindi at 360px without horizontal overflow.
