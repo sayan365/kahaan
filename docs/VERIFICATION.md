@@ -7,6 +7,7 @@
 - An isolated export of staged public files, with no env files, saved local state or generated backend JSON, passed `npm ci`, all 18 tests, TypeScript and the production build. The working checkout passed the same checks; strict UI audit had zero findings. No SAM validation or new live voting check is claimed.
 - Removed generated runtime/public copies, generated audit output and obsolete scaffolding/fallback scripts from Git. Backend packaging copies are recreated by tests/build/dev or explicit data sync. Setup, AWS operations, verification and submission guides moved into tracked `docs/`. The planning PRD is kept at ignored `docs/kahaan-prd.md`, absent from the current public tree; earlier Git history is retained.
 - Added the owner-selected MIT software/documentation licence, preserving third-party data/font rights. README now includes a real screenshot, short local quickstart, coverage table, architecture and links to detailed guides. A GitHub workflow runs the three required checks on public-source checkouts without AWS credentials or deployment.
+- GitHub's `Checks / verify (push)` passed for commit `f65c7ae` in 20 seconds. The rendered README displayed the screenshot, coverage table and Mermaid architecture correctly. Repository description and demo website were added. The updated Amplify frontend showed both bins after switching from charger search, with no warning/error logs in that checked live flow; no AWS resources or backend data were changed.
 
 ## Interface polish (11 October 2026)
 
