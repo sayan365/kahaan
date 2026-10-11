@@ -22,7 +22,7 @@ Finding a facility is only useful if you can understand what it is, where its in
 
 Start, Nearby and How it works are separate views. Search/filter URLs survive refresh and browser navigation. Location permission is optional; without it, distance is measured from the pilot centre. No runtime AI calls are used.
 
-![Nearby: floating search controls, sourced results and the Kolkata map](docs/images/nearby.png)
+![Nearby: a clear Kolkata map and compact details with visible directions](docs/images/nearby.png)
 
 ## Run locally
 

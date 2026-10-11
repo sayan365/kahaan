@@ -14,7 +14,7 @@ export function Dialog({ title, children, onClose, locale, className = '' }: { c
   return <dialog className={className} ref={ref} aria-labelledby={titleId} onCancel={e => { e.preventDefault(); onClose(); }}><div className="dialog-head"><h2 id={titleId}>{title}</h2><Button className="icon-button" onClick={onClose} aria-label={text(locale, 'close')}>×</Button></div><div className="dialog-body">{children}</div></dialog>;
 }
 // A modeless map detail panel: keep the map and results keyboard-operable.
-export function PlacePanel({ title, children, onClose, locale }: { title: string; children: ReactNode; onClose: () => void; locale: Locale }) {
+export function PlacePanel({ title, children, actions, onClose, locale }: { title: string; children: ReactNode; actions: ReactNode; onClose: () => void; locale: Locale }) {
   const ref = useRef<HTMLElement>(null), heading = useRef<HTMLHeadingElement>(null), titleId = useId();
   const close = useRef(onClose); close.current = onClose;
   const previousFocus = useRef<HTMLElement | null>(null);
@@ -27,9 +27,11 @@ export function PlacePanel({ title, children, onClose, locale }: { title: string
       if (event.key === 'Escape' && !document.querySelector('dialog[open]')) { event.preventDefault(); dismiss(); }
     };
     document.addEventListener('keydown', escape);
-    return () => { document.removeEventListener('keydown', escape); if (panel?.contains(document.activeElement) && previous?.isConnected) previous.focus({ preventScroll: true }); };
+    const outside = (event: PointerEvent) => { const target = event.target as Element; if (!document.querySelector('dialog[open]') && !panel?.contains(target) && !target.closest('.facility-marker, .place-row, .locale-control')) close.current(); };
+    document.addEventListener('pointerdown', outside);
+    return () => { document.removeEventListener('keydown', escape); document.removeEventListener('pointerdown', outside); if (panel?.contains(document.activeElement) && previous?.isConnected) previous.focus({ preventScroll: true }); };
   }, []);
-  return <section className="map-detail-panel" ref={ref} aria-labelledby={titleId}><div className="dialog-head"><h2 id={titleId} ref={heading} tabIndex={-1}>{title}</h2><Button className="icon-button" onClick={dismiss} aria-label={text(locale, 'close')}>×</Button></div><div className="dialog-body">{children}</div></section>;
+  return <section className="map-detail-panel" ref={ref} aria-labelledby={titleId}><div className="dialog-head"><h2 id={titleId} ref={heading} tabIndex={-1}>{title}</h2><Button className="icon-button" onClick={dismiss} aria-label={text(locale, 'close')}>×</Button></div><div className="dialog-body">{children}</div><div className="place-panel-actions">{actions}</div></section>;
 }
 export function Icon({ type, size = 28 }: { type: PlaceType | 'pin' | 'search' | 'arrow'; size?: number }) {
   const paths = {

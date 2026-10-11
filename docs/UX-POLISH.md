@@ -33,3 +33,6 @@ Check desktop and 360–390px mobile Start/Nearby/Guide, all three locales, filt
 The owner supplied [Bangalore Startup Map](https://www.bangalorestartupmap.com/) as a live browser reference and approved this direction. Nearby now has a full viewport map, floating search and type controls, compact nearest-first results and separate modeless details. The reference mobile Map and Grid modes were also inspected. Mobile List now shows full-page single-column cards; Map restores the map with compact results. Card selection returns to Map with details. Existing provenance, trust rules, item guidance and contribution gating remain. Start and How it works retain their document layouts.
 
 Final map revision: all 18 tests, TypeScript and production build passed. Strict UI audit: zero findings. Design-document lint: zero errors, five existing unused-token warnings. Browser verification and remaining limits are recorded in VERIFICATION.md.
+
+## Usability correction
+Removed the permanent nearby-results overlay from Map. List now uses document scrolling with unboxed cards on mobile and a responsive desktop grid. Switching modes and clicking outside dismiss place details. Compact detail panels keep Directions and community actions in a pinned footer; community evidence expands separately. No backend or data changes.

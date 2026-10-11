@@ -16,7 +16,7 @@ function Events({ point, onPin, immersive, places }: { point?: Point | null; onP
     } else if (immersive) {
       const mobile = matchMedia('(max-width: 760px)').matches;
       const bounds: [number, number][] = places.length ? places.map(p => [p.lat, p.lng]) : [[area.bbox.south, area.bbox.west], [area.bbox.north, area.bbox.east]];
-      map.fitBounds(bounds, { maxZoom: places.length === 1 ? 16 : area.zoom, paddingTopLeft: mobile ? [24, Math.min(220, map.getSize().y * .28)] : [410, 180], paddingBottomRight: mobile ? [24, Math.min(280, map.getSize().y * .35)] : [60, 70], animate: false });
+      map.fitBounds(bounds, { maxZoom: places.length === 1 ? 16 : area.zoom, paddingTopLeft: mobile ? [24, Math.min(220, map.getSize().y * .28)] : [24, 180], paddingBottomRight: mobile ? [24, Math.min(100, map.getSize().y * .15)] : [60, 70], animate: false });
     }
     };
     applyView(!matchMedia('(prefers-reduced-motion: reduce)').matches);

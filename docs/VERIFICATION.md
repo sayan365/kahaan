@@ -58,3 +58,9 @@ Demo cost preparation: API throttle lowered to 5 req/s, burst 10; stack-managed 
 - The frontend was deployed to the existing Amplify demo. Live checks showed 31 records, Croma guidance and zero community counters, keyboard details and Bengali mobile controls. No new backend resources or data were introduced.
 
 - Final review moved selection clearing into search/filter/navigation actions so a newly saved contribution remains selected after its route changes. Mobile card selection returns to Map with details. Full-page List mode was checked at 390px and in Hindi at 360px without horizontal overflow.
+
+## Map/list/detail usability corrections
+
+Local Chrome checks covered a clear Map without the nearby-results overlay, document-scrolling List with 31 source records, a three-column desktop card grid, mode-switch and outside-pointer dismissal, Enter/Escape and focus restoration, and pinned Directions/Confirm/Report actions on desktop and at 360x740 and 360x640. Bengali/Hindi footer actions remained within the short viewport; language switching preserved selection. Expanding community checks did not move the action footer. Signed-out confirmation opened the existing local auth dialog and Escape cancelled it. No field testing, physical-device testing, native-language review or independent cloud voting is claimed.
+
+Final correction checks: all 18 tests, TypeScript and release build passed; strict UI audit zero findings; design-document lint zero errors and five existing unused-token warnings. Existing Amplify demo deployed the release. Live Chrome verified desktop/mobile pinned footer, List switch dismissal, natural list overflow, clear Map, outside dismissal, and no warning/error logs in the checked flow. Backend resources and source records were unchanged.
