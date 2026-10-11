@@ -1,15 +1,15 @@
 import http from 'node:http';
 import { randomUUID } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, renameSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { createService } from './src/service.mjs';
 import { AppError } from './src/lib/domain.mjs';
+import { loadLocalState, saveLocalState } from './src/lib/local-state.mjs';
 const area=JSON.parse(readFileSync('data/area.json','utf8'));
-mkdirSync('.local-data',{recursive:true});
-let state;
-try {state=JSON.parse(readFileSync('.local-data/state.json','utf8'));}
-catch {state={places:[...JSON.parse(readFileSync('data/osm_places.json','utf8')),...JSON.parse(readFileSync('data/manual_places.json','utf8'))],votes:[]};}
+const statePath='.local-data/state.json';
+const seeds=[...JSON.parse(readFileSync('data/osm_places.json','utf8')),...JSON.parse(readFileSync('data/manual_places.json','utf8'))];
+const state=loadLocalState(statePath,seeds);
 const sessions=new Map();
-function persist(){writeFileSync('.local-data/state.tmp',JSON.stringify(state,null,2));renameSync('.local-data/state.tmp','.local-data/state.json');}
+function persist(){saveLocalState(statePath,state);}
 const repo={
   list:async()=>state.places,
   get:async(a,id)=>state.places.find(p=>p.placeId===id),

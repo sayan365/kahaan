@@ -22,7 +22,7 @@ export default function App() {
   const [route, setRoute] = useState<Route>(() => readRoute(window.location.hash));
   const { screen, filter, query } = route;
   const setQuery = (query: string) => setRoute(old => ({ ...old, query }));
-  const setFilter = (filter: Filter) => setRoute(old => ({ ...old, filter }));
+  const setFilter = (filter: Filter) => setRoute(old => ({ ...old, filter, query: '' }));
   const [view, setView] = useState<'list' | 'map'>('list');
   const screenHeading = useRef<HTMLHeadingElement>(null);
   function navigate(screen: Screen, changes: Partial<Route> = {}) {

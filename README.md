@@ -1,117 +1,107 @@
 # Kahaan
 
-Find a toilet, a bin or the right place for old electronics in Kolkata. English is the default; Bengali and Hindi are supported across browsing, search, forms and feedback. Anyone can browse. Accounts are required to add, confirm or report a place.
+### Find a toilet. Find a bin. Find the right place for old electronics.
 
-Start with a need, browse the dedicated Nearby list/map, or read How it works for source and community-check information. Search and filters are retained in shareable hash URLs. The modern minimalist interface uses self-hosted Manrope under the included SIL Open Font License. [Interface review and design plan](docs/UX-POLISH.md).
+A modern, multilingual neighbourhood guide for **Central Kolkata**. Choose what you need, check the source, and get directions. Help improve the map by adding, confirming or reporting a place.
 
-Try the [temporary AWS demo](https://demo.dato5zt1h00lk.amplifyapp.com), or run the application locally using the commands below. The hosted demo may be retired after judging; local development uses the committed source data and does not depend on that deployment or an AWS account. Internet access is needed for map tiles and external directions.
+**[Try the live demo](https://demo.dato5zt1h00lk.amplifyapp.com)** · **[Run locally](#run-locally)** · **[Contribute](CONTRIBUTING.md)** · **[Deploy your own](docs/SETUP.md#deploy-to-your-own-aws-account)**
 
-[Setup and troubleshooting](docs/SETUP.md) · [Contributing](CONTRIBUTING.md) · [Verification evidence](VERIFICATION.md) · [Costs and shutdown](AWS-DEMO.md) · [Submission checklist](SUBMISSION.md)
+![Kahaan desktop interface: need choices and the Kolkata pilot map](docs/images/desktop.png)
+
+Built for the **WeMakeDevs x AWS Environmental Hacks 2026**, Waste and Energy track. English by default, with Bengali and Hindi throughout the main flows.
+
+## Why Kahaan?
+
+Finding a facility is only useful if you can understand what it is, where its information came from and whether it suits your need. Kahaan brings sanitation and waste wayfinding together in one focused pilot, with transparent source evidence and community checks.
+
+- **Start with a need:** toilets, everyday waste or old electronics. No account required to browse.
+- **Search what you are holding:** 30 items, typo-tolerant search and aliases in all three languages.
+- **Choose a suitable place:** nearest-first list/map, item-specific acceptance, source links and clearly labelled distance origin.
+- **Contribute:** add a pin, confirm a listing or report a problem after signing in.
+- **Understand the evidence:** source data starts with zero votes. Community confirmation does not establish regulatory authorisation.
+
+Start, Nearby and How it works are separate views. Search/filter URLs survive refresh and browser navigation. Location permission is optional; without it, distance is measured from the pilot centre. No runtime AI calls are used.
 
 ## Run locally
 
-Requires Node.js 22.16+ (Node 24 was used for this build).
+**Requirements:** Git and **Node.js 24+** with npm. No AWS account, API key or environment file is needed.
 
-```powershell
+```sh
 git clone https://github.com/sayan365/kahaan.git
 cd kahaan
 npm ci
-npm test
-npm run build
 npm run dev
 ```
 
-Open http://127.0.0.1:5173. The development API runs on loopback port 3001. The app explicitly labels local demo mode. Asha, Rahul and Mira are simulated contributors; the local server issues temporary session tokens. Places/votes persist under ignored `.local-data/state.json`. These identities do not authenticate against AWS. Do not expose the local demo API publicly.
+Open **http://127.0.0.1:5173**. This starts the frontend and a loopback-only local API. Ctrl+C stops both.
 
-For a repeatable contribution demo: add a clearly named demo place as Asha, sign out, then confirm as Rahul and Mira. The creator cannot vote, an account cannot vote twice, and two independent confirmations change the label to Community confirmed. Two reports mark it Reported only when reports equal or exceed confirmations. Source records begin with zero votes.
+The complete source catalogue ships with the repository. Local contributions persist in ignored `.local-data/state.json`. On restart, newer source records are merged automatically and source metadata is refreshed; existing contributions, votes and counters are preserved. An invalid state file fails visibly rather than being silently reset.
 
-## What is implemented
+The local banner and sign-in chooser identify **Asha, Rahul and Mira as simulated contributors**. To evaluate the trust flow, add a clearly labelled test place as Asha, then confirm it as Rahul and Mira. The creator cannot vote; duplicate votes are rejected. These accounts do not authenticate against AWS. Keep this local API on loopback.
 
-- Need-based home, nearest-first list, map and type filters.
-- Thirty items with English/Bengali/Hindi names, aliases and disposal tips. Fuse.js handles typos. Batteries and mercury-bearing lamps have no automatic destination until specialist acceptance is evidenced.
-- Item-specific destination selection with preference order, straight-line distance and external directions. Reported or explicitly unsuitable points are excluded from recommendations.
-- Location permission is optional. Distances otherwise use the clearly labelled area centre.
-- Add by map pin, coordinates or location; confirm and report; validated authenticated writes.
-- Cognito email registration, verification, sign-in and sign-out when configured. Custom localized forms use Amplify Auth.
-- Lambda handlers, DynamoDB transactional voting, SAM infrastructure, Amplify build specification and idempotent seed script.
+Internet is required for map tiles and external directions. The location/item catalogue and local contribution API do not depend on the hosted demo. If you already configured `VITE_API_URL`, unset it to use local simulation. See [setup and troubleshooting](docs/SETUP.md).
 
-## Online data and provenance
+## What data is included?
 
-The pilot window is in `data/area.json`; it is not an administrative boundary or citywide coverage. The expanded catalogue contains **31 online-sourced listings: 26 OSM toilet records, two OSM waste points, two e-waste listings and one recycling-service office**. KMC Dhapa Garage, the waste-disposal container and Vital Waste's service office are call-first/browse-only candidates, excluded from automatic item recommendations. Only the litter bin is suggested for selected small dry litter. See [research notes](data/RESEARCH.md) for provenance and unresolved access questions. Data gaps do not prove facilities are absent.
+The current pilot contains **31 online-sourced listings**, bounded by [`data/area.json`](data/area.json).
 
-Each source-backed place links its source. `data/sources.json` records methods, dates and limitations. Croma's [programme](https://www.croma.com/lp-croma-e-waste) and [Park Street store page](https://store.croma.com/croma-park-street-electronics-retail-and-repair-shop-park-street-area-kolkata-263521/Home) provide collection policy and location. Item-specific acceptance is not guaranteed; users are told to check before travel. KMC's historical 2015 toilet list was not presented as current verified data.
+| Category | Listings | What to expect |
+|---|---:|---|
+| Toilets | 26 | OSM records; separate facilities can share a building. Current access is not field-verified. |
+| Bins / waste points | 2 | One small-litter bin and one browse-only disposal container. Not household or hazardous-waste destinations. |
+| E-waste | 2 | Croma Park Street plus a call-first KMC garage candidate. Item acceptance still needs checking before travel. |
+| Recycling | 1 | A call-first service office; walk-in drop-off is not evidenced. |
 
-Overpass initially returned errors, so a bounded, rate-limited Nominatim search supplied the first OSM snapshot. A later full-area Overpass query succeeded and added ten OSM records while preserving existing IDs. `npm run fetch:osm` refreshes the OSM seed file; review its diff before publishing. `node scripts/research-osm.mjs` is a one-off fallback, not a runtime API; do not run it repeatedly or use it as a bulk crawler. `node scripts/sync-data.mjs` copies authoritative area/seed files into runtime locations. Repeat seeding never overwrites existing votes.
+**Limited coverage is visible, not filled with invented facilities.** Recycling listings are browsable, but an item search may have no suitable destination. Batteries and specialist waste intentionally have no automatic destination until acceptance is evidenced. Choosing a category clears item search and shows its full catalogue, so an earlier charger query cannot hide the bins or recycling listings.
 
-Map tiles and facility data: © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), data licensed under ODbL. Keep attribution visible. External tiles require connectivity and follow the [OSM tile usage policy](https://operations.osmfoundation.org/policies/tiles/). Do not prefetch tiles or claim offline support.
+All records were researched online. There are no field checks, measured disposal outcomes or manufactured confirmations. Missing listings do not mean services are absent. [Research notes and sources](data/RESEARCH.md) describe the evidence and gaps; [contributing](CONTRIBUTING.md) explains how to improve coverage.
 
-## AWS deployment
-
-Live demo: **https://demo.dato5zt1h00lk.amplifyapp.com**. The backend was deployed through CloudFormation in Mumbai and now contains 31 online-sourced records after the research expansion. Public GET, CORS, unauthenticated write rejection, live sign-in, authenticated creation and creator-vote rejection have been checked. Independent cloud voting still needs acceptance testing with another account. See [AWS-DEMO.md](AWS-DEMO.md) for budget limits, resource inventory and shutdown instructions. AWS CLI and SAM CLI are **not installed in the local build environment**. For a separate CLI deployment, install the official [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html), then authenticate with your own account locally. Never paste credentials into chat or commit them.
-
-1. Set an AWS budget alert. Authenticate locally (for example `aws configure sso`, then `aws sso login --profile your-profile`). Export `AWS_PROFILE` if using a named profile.
-2. Push this project to a public repository, preserving real hackathon development history and third-party attribution. Connect the repository in AWS Amplify Hosting, selecting the `frontend` app root and the tracked `amplify.yml`. Obtain its exact HTTPS origin.
-3. Validate and deploy from the project root:
-
-```powershell
-node scripts/sync-data.mjs
-sam validate --lint
-sam build
-sam deploy --guided --region ap-south-1 --parameter-overrides FrontendOrigin=https://YOUR-AMPLIFY-DOMAIN
-```
-
-4. Read the outputs: ApiUrl, PlacesTable, UserPoolId and UserPoolClientId. Set Amplify build environment variables:
-
-```text
-VITE_API_URL=<ApiUrl>
-VITE_AWS_REGION=ap-south-1
-VITE_USER_POOL_ID=<UserPoolId>
-VITE_USER_POOL_CLIENT_ID=<UserPoolClientId>
-```
-
-5. Seed the live table using your local authenticated AWS session:
-
-```powershell
-$env:AWS_REGION = 'ap-south-1'
-$env:PLACES_TABLE = '<PlacesTable>'
-npm run seed
-```
-
-6. Redeploy Amplify after setting the variables. For local testing against AWS, copy `frontend/.env.example` to `frontend/.env`, fill the same public identifiers, and restart Vite. Missing production configuration shows a setup error; production never switches to demo authentication.
-7. Verify the live `/places`, Cognito email verification, unauthorized write rejection, creator/duplicate-vote rejection, independent confirmation, CORS and mobile HTTPS behaviour. Create three real demo accounts ahead of recording. Do not label the local simulation as an AWS deployment.
-
-The API Gateway JWT authorizer validates Cognito issuer/audience. The client sends the ID token; this configuration does not require OAuth scopes. Live token acceptance passed authenticated creation and creator-vote rejection; independent cloud voting still needs testing. Only GET /places is public. API Gateway limits requests to a 5 req/s rate and 10 burst for the short demo. DynamoDB tables use on-demand capacity and stack-managed Lambda logs expire after seven days. Costs depend on usage and account eligibility; throttling is not a spending cap. See [AWS-DEMO.md](AWS-DEMO.md) for the current account blocker, budget status, artifact packaging, pause and permanent shutdown instructions.
-
-## Architecture
+## How it works
 
 ```mermaid
 flowchart LR
-  User[Browser: React / Leaflet / localized search] --> Hosting[AWS Amplify Hosting]
-  User -->|Public GET; authenticated POST| API[API Gateway HTTP API]
-  User --> Cognito[Cognito email accounts]
-  API --> Lambda[Lambda: list / create / vote]
+  Browser[React + Leaflet + multilingual search] --> Hosting[Amplify static hosting]
+  Browser -->|Public browse / authenticated writes| API[API Gateway HTTP API]
+  Browser --> Auth[Cognito email accounts]
+  API --> Lambda[Lambda]
   Lambda --> Places[DynamoDB Places]
   Lambda --> Votes[DynamoDB Votes]
 ```
 
-AWS is used for actual hosting, authenticated contributions and atomic community voting; no AI inference is needed. A DynamoDB transaction inserts the unique vote and increments its counter together. Derived status is never stored. API responses omit creator identity.
+AWS hosts the public app and protects contributions with Cognito. DynamoDB transactions insert a unique vote and increment its counter atomically. Two independent confirmations produce **Community confirmed** only when confirmations exceed reports; two reports produce **Reported** when reports equal or exceed confirmations. Reported and unsuitable points are excluded from automatic recommendations. Creator identity is omitted from public responses.
 
-## Verification commands
+Local development runs the same validation/service rules against a persistent local store, with explicitly simulated authentication. A public deployment must use the AWS backend, never the local demo server.
 
-`npm test` covers status branches, geography, malformed input, permission rules, independent votes, duplicate votes, multilingual/typo search and seed integrity. `npm run typecheck` checks the frontend; `npm run build` produces `frontend/dist`. The build is not a substitute for `sam validate` or live AWS acceptance.
+## Develop and verify
 
-## Hackathon demo (under three minutes)
+```sh
+npm test
+npm run typecheck
+npm run build
+```
 
-0:00–0:20: a person needs a toilet or has an old charger in Kolkata.
-0:20–1:15: choose a need, find a sourced place, search charger and open directions; switch Bengali/Hindi without losing the task.
-1:15–2:10: add a place, demonstrate creator/duplicate rejection and two other accounts confirming it.
-2:10–2:35: show the actual AWS deployment and explain atomic votes.
-2:35–2:45: explain coverage gaps and next steps.
+The build outputs `frontend/dist`; tests/build/dev synchronise generated backend data. Edit the authoritative source files, not generated copies. Tests cover trust thresholds, coordinate/input validation, permissions, voting transactions, multilingual search, seed integrity, navigation and local catalogue upgrades.
 
-Use the AWS URL and real accounts for the final video once deployed. Submission requires a public repository, a YouTube video under three minutes, and a short writeup. Check the [event schedule](https://www.wemakedevs.org/aws/env/schedule) for the precise deadline.
+| Directory | Purpose |
+|---|---|
+| `frontend/` | Responsive React interface, translations, item catalogue and font assets |
+| `backend/` | Local API, AWS handlers, service/domain logic and tests |
+| `data/` | Pilot boundary, source places, provenance and research notes |
+| `scripts/` | Development, data sync/research, seeding, packaging and shutdown |
+| `docs/` | Setup, deployment, cost controls, evidence and submission guidance |
 
-## Known limits
+[Setup / deployment](docs/SETUP.md) · [Costs / shutdown](docs/AWS-DEMO.md) · [Verification evidence](docs/VERIFICATION.md) · [Design review](docs/UX-POLISH.md) · [Submission checklist](docs/SUBMISSION.md)
 
-Single area and full-dataset fetch; no moderation or protection against someone creating multiple genuine accounts. Community confirmation does not establish regulatory authorisation or current accessibility. All locations were researched online; no field checks, human usability study or actual disposal outcomes were measured. Translation and tips need local/native review before broader release. Basemap labels and contributed names/notes remain in the source language. Collection acceptance, fees and current conditions may change. No photos, pickup bookings, offline mode, rewards or invented environmental impact statistics.
+The hosted demo may be retired after judging; local setup remains usable. Deploying to your own AWS account can incur charges. Use your own public configuration identifiers, preserve secrets in ignored env files, and follow the cost/shutdown guide. A frontend build does not replace SAM validation or live AWS acceptance.
 
-Before scaling: moderation, contributor abuse controls, acceptance-specific facility data, more locally reviewed translations, and geographic indexing. Those are future work, not features claimed in this submission.
+## Limits and next steps
+
+This is one bounded pilot with a full-dataset fetch and a simple trust model. No moderation, pickup booking, offline mode or protection against multiple genuine accounts is claimed. Opening hours, public access and collection acceptance can change. Native-language review, physical-device testing and successful independent cloud voting remain outstanding; locally simulated checks are documented separately. Contributed text and map labels stay in their original language.
+
+The most useful next contributions are evidenced public bins, acceptance-specific recycling locations, translation review and moderation. Please include source URLs and uncertainty rather than assuming that a business address is a drop-off point.
+
+## Licence and attribution
+
+Application code and project-authored documentation: **[MIT](LICENSE)**. OpenStreetMap-derived data: **[ODbL](https://www.openstreetmap.org/copyright)**, copyright OpenStreetMap contributors. Operator/municipal records retain their original provenance and applicable rights; the code licence does not relicense them. Manrope: **[SIL Open Font License](frontend/public/fonts/OFL-Manrope.txt)**. Keep map attribution visible and follow the [OSM tile usage policy](https://operations.osmfoundation.org/policies/tiles/).
+
+Codex assisted development, research and interface refinement. Verification and data limitations are reported explicitly.

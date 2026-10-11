@@ -127,7 +127,8 @@ h1:focus { outline: none; }
 .chips { display: flex; flex-wrap: wrap; gap: 7px; }
 .chips button { min-height: 44px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); font-size: 12px; color: var(--muted); }
 .chips button:hover { background: #edf4ef; border-color: var(--primary); }
-.chips .chip-active { background: var(--primary); color: white; border-color: var(--primary); }
+.chips button.chip-active { background: var(--primary); color: white; border-color: var(--primary); }
+.chips button.chip-active:hover { background: #125444; color: white; border-color: #125444; }
 .view-switch { display: none; background: #eaf0ec; padding: 3px; border-radius: 9px; flex-shrink: 0; }
 .view-switch button { border: 0; background: transparent; padding: 7px 12px; min-height: 44px; font-size: 12px; border-radius: 6px; }
 .view-switch button[aria-pressed=true] { background: var(--surface); color: var(--primary); font-weight: 750; }

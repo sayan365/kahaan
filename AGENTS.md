@@ -1,6 +1,6 @@
 # Working on Kahaan
 
-Read kahaan-prd.md, DESIGN.md and UX-CONTRACT.md before changes. Current user decisions take precedence: Kolkata pilot, English default, Bengali/Hindi support, online-only location research, open community contributions behind sign-in.
+Read DESIGN.md and UX-CONTRACT.md before changes, plus docs/kahaan-prd.md if present locally (the owner keeps it ignored). README.md and docs/SETUP.md describe the public scope and stack. Current user decisions take precedence: Kolkata pilot, English default, Bengali/Hindi support, online-only location research, open community contributions behind sign-in.
 
 Build the smallest end-to-end MVP. Keep one repo and AWS region; ask before adding a dependency outside the PRD stack. Keep secrets in ignored env files, never in source or chat. data/area.json owns the pilot boundary; do not hardcode another area. Run node scripts/sync-data.mjs after data changes.
 

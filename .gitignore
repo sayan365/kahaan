@@ -12,3 +12,7 @@ frontend/.env.*
 .demo-artifacts/
 *.log
 .DS_Store
+backend/area.json
+backend/seed_places.json
+premium-audit.json
+docs/kahaan-prd.md

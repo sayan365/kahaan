@@ -1,5 +1,13 @@
 # Verification evidence
 
+## Public repository / local reliability (11 October 2026)
+
+- Fixed old local databases retaining only the original 19 records. Startup now merges the current source catalogue and refreshes source metadata while preserving local contributions, counters and votes. Fresh installs include all four types. Corrupt/malformed state fails without overwriting it. Regression tests cover fresh installs, voted upgrades, repeatability and corrupt files.
+- Restarted the existing local app and checked 31 listings, both bin records and the call-first recycling office in Chrome. Selecting Bins after charger search cleared the query and displayed both listings. Active filters now have explicit dark-green/white hover styling, preventing the previous white-on-pale-background cascade.
+- An isolated export of staged public files, with no env files, saved local state or generated backend JSON, passed `npm ci`, all 18 tests, TypeScript and the production build. The working checkout passed the same checks; strict UI audit had zero findings. No SAM validation or new live voting check is claimed.
+- Removed generated runtime/public copies, generated audit output and obsolete scaffolding/fallback scripts from Git. Backend packaging copies are recreated by tests/build/dev or explicit data sync. Setup, AWS operations, verification and submission guides moved into tracked `docs/`. The planning PRD is kept at ignored `docs/kahaan-prd.md`, absent from the current public tree; earlier Git history is retained.
+- Added the owner-selected MIT software/documentation licence, preserving third-party data/font rights. README now includes a real screenshot, short local quickstart, coverage table, architecture and links to detailed guides. A GitHub workflow runs the three required checks on public-source checkouts without AWS credentials or deployment.
+
 ## Interface polish (11 October 2026)
 
 - Modern minimalist Start, Nearby and How it works views replace the long combined page. Hash URLs restore filters and multilingual search; browser back and refresh were checked. Manrope is self-hosted with its license.

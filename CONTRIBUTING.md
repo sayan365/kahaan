@@ -1,6 +1,6 @@
 # Contributing to Kahaan
 
-Start with [local setup](docs/SETUP.md), then read `AGENTS.md`, `kahaan-prd.md`, `DESIGN.md` and `UX-CONTRACT.md`. Keep the pilot to its configured Kolkata boundary and keep English, Bengali and Hindi main flows consistent.
+Start with [local setup](docs/SETUP.md), then read `AGENTS.md`, `DESIGN.md` and `UX-CONTRACT.md`. The original planning PRD is kept locally and is not required for contributors. Keep the pilot to its configured Kolkata boundary and keep English, Bengali and Hindi main flows consistent.
 
 For a missing place in the current live pilot, use Add a place after signing in. Confirm only places you have evidence for. Online sourcing and community confirmation are different from field checks or regulatory authorisation. Do not add fake facilities or vote on test records as if they were real.
 
@@ -20,4 +20,4 @@ Status, validation and distance rules belong in `backend/src/lib/domain.mjs`; wr
 
 Keep credentials, `.env` files, private AWS details and local test state out of commits. Use labelled local simulations for testing; do not expose the development API publicly. Report whether a check ran locally or against AWS.
 
-The project currently has no explicit software licence. Resolve the intended licence with the owner before assuming permission for unrestricted reuse or redistribution; preserve third-party attribution in all cases.
+Application code and project-authored documentation use the [MIT licence](LICENSE). Preserve third-party attribution and data provenance; MIT does not relicense OSM or operator/municipal source records. Runtime copies in `backend/area.json` and `backend/seed_places.json` are generated and ignored; edit `data/` instead. Do not reintroduce generated audit reports or one-time scaffolding into the public repository.

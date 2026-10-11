@@ -29,6 +29,8 @@ The litter-bin source is [OSM node 7048259546](https://www.openstreetmap.org/nod
 
 ## Publishing and later correction
 
+The 11 October local-startup fix merges the committed 31-record catalogue into an older local database without resetting contributions or votes. Sparse coverage is distinct from that fixed upgrade bug. KMC's [2026–27 budget](https://www.kmcgov.in/KMCPortal/downloads/Budget_English_2026_2027.pdf) discusses citywide bin procurement and waste infrastructure but does not supply individual public bin coordinates and access evidence for this pilot. It was not converted into invented map pins. The one-off Nominatim fallback scaffolding has been removed; `scripts/fetch-osm.mjs` remains the bounded research command.
+
 Keep `sourceUrl`, `locationSourceUrl` where applicable, research dates and uncertainty notes. Synchronise with `node scripts/sync-data.mjs`, validate the seeds and seed DynamoDB using conditional writes. Re-seeding adds missing records without replacing contributed data or votes. It does not update or remove an already seeded record automatically; a source correction needs a separately reviewed targeted update.
 
 Reports indicate community concerns; they do not compensate for invented data or prove facility acceptance. Reported places are excluded from recommendations once the existing trust threshold is met. Browse-only records remain excluded even after community confirmations until access and acceptance evidence is reviewed.
